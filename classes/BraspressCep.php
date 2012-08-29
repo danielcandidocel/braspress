@@ -12,7 +12,7 @@
 
     /**
      * Contém o CEP para a consulta de endereço.
-     * @var string
+     * @var double
      */
     private $cep;
 
@@ -24,7 +24,7 @@
 
     /**
      * Atribui o CEP para a consulta de endereço.
-     * @param string $cep CEP para a consulta de endereço.
+     * @param double $cep CEP para a consulta de endereço.
      * @throws Exception
      */
     public function setCep($cep)

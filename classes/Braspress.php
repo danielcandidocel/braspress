@@ -17,13 +17,13 @@
 
     /**
      * Contém o CNPJ da empresa que possui contrato com a Braspress.
-     * @var string
+     * @var double
      */
     private $cnpjEmpresa;
 
     /**
      * Cria um objeto da Braspress.
-     * @param string $cnpjEmpresa CNPJ da empresa que possui contrato com a Braspress.
+     * @param double $cnpjEmpresa CNPJ da empresa que possui contrato com a Braspress.
      */
     public function __construct($cnpjEmpresa)
     {
@@ -32,11 +32,11 @@
 
     /**
      * Retorna o CNPJ da empresa que possui contrato com a Braspress.
-     * @return type
+     * @return double
      */
     protected function getCnpjEmpresa()
     {
-      return $this->cnpjEmpresa;
+      return (double) $this->cnpjEmpresa;
     }
 
     /**

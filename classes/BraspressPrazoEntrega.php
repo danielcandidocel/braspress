@@ -12,13 +12,13 @@
 
     /**
      * Contém o CEP de origem.
-     * @var string
+     * @var double
      */
     private $cepOrigem;
 
     /**
      * Contém o CEP de destino.
-     * @var string
+     * @var double
      */
     private $cepDestino;
 
@@ -30,7 +30,7 @@
 
     /**
      * Informa o CEP de origem para a pesquisa.
-     * @param string $cepOrigem CEP de origem.
+     * @param double $cepOrigem CEP de origem.
      * @throws Exception
      */
     public function setCepOrigem($cepOrigem)
@@ -43,7 +43,7 @@
 
     /**
      * Informa o CEP de destino para a pesquisa.
-     * @param string $cepDestino CEP de destino.
+     * @param double $cepDestino CEP de destino.
      * @throws Exception
      */
     public function setCepDestino($cepDestino)
