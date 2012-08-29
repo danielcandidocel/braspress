@@ -19,6 +19,11 @@ Consulta de CEP
 Permite obter o endereço de um determinado CEP de acordo com o cadastro
 interno da Braspress.
 
+Consulta de Prazos
+==================
+
+Permite obter o prazo de entrega entre dois CEPs determinados.
+
 Contatos
 ========
 
