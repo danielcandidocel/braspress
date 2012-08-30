@@ -14,6 +14,14 @@
      */
 
     const URL_CALCULADOR = 'http://tracking.braspress.com.br/wscalculafreteisapi.dll/wsdl/IWSCalcFrete?wsdl';
+    /**
+     * Contém o tipo de frete rodoviário.
+     */
+    const TIPO_FRETE_RODOVIARIO = '1';
+    /**
+     * Contém o tipo de frete aéreo.
+     */
+    const TIPO_FRETE_AEREO = '2';
 
     /**
      * Contém o CNPJ da empresa que possui contrato com a Braspress.
