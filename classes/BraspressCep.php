@@ -49,13 +49,17 @@
       //Inicia transação junto a Braspag
       try
       {
-        $soap = new SoapClient(parent::URL_CALCULADOR);
-        $retorno = $soap->ConsultaCEP((double) $this->cep, (double) $this->getCnpjEmpresa());
-        if ($retorno instanceof stdClass)
+        if (@fopen(parent::URL_CALCULADOR, 'r'))
         {
-          $servico = new BraspressCepResultado($retorno);
-          $this->resultado = $servico;
-          return TRUE;
+          $soap = new SoapClient(parent::URL_CALCULADOR);
+          $retorno = $soap->ConsultaCEP((double) $this->cep, (double) $this->getCnpjEmpresa());
+          if ($retorno instanceof stdClass)
+          {
+            $servico = new BraspressCepResultado($retorno);
+            $this->resultado = $servico;
+            return TRUE;
+          } else
+            return FALSE;
         } else
           return FALSE;
       } catch (SoapFault $sf)

@@ -66,15 +66,20 @@
       //Inicia transação junto a Braspag
       try
       {
-        $soap = new SoapClient(parent::URL_CALCULADOR);
-        $retorno = $soap->ConsultaPrazoEntrega((double) $this->cepOrigem, (double) $this->cepDestino, (double) $this->getCnpjEmpresa());
-        $resultado = array(
-          'prazo' => $retorno,
-          'sucesso' => TRUE,
-          'mensagem' => '',
-        );
-        $servico = new BraspressPrazoEntregaResultado($resultado);
-        $this->resultado = $servico;
+        //Verifica se o sistema está online
+        if (@fopen(parent::URL_CALCULADOR, 'r'))
+        {
+          $soap = new SoapClient(parent::URL_CALCULADOR);
+          $retorno = $soap->ConsultaPrazoEntrega((double) $this->cepOrigem, (double) $this->cepDestino, (double) $this->getCnpjEmpresa());
+          $resultado = array(
+            'prazo' => $retorno,
+            'sucesso' => TRUE,
+            'mensagem' => '',
+          );
+          $servico = new BraspressPrazoEntregaResultado($resultado);
+          $this->resultado = $servico;
+        } else
+          return FALSE;
       } catch (SoapFault $sf)
       {
         $resultado = array(
