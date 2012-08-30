@@ -1,0 +1,533 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Braspress » \BraspressCalculaFrete</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Braspress</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/braspress.html"><i class="icon-folder-open"></i> braspress</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">9</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public inherited"><a href="#__construct" title="__construct :: Cria um objeto da Braspress."><span class="description">Cria um objeto da Braspress.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#getResultado" title="getResultado :: Retorna o resultado da consulta."><span class="description">Retorna o resultado da consulta.</span><pre>getResultado()</pre></a></li>
+<li class="method public "><a href="#processaConsulta" title="processaConsulta :: Processa a consulta e retorna VERDADEIRO se foi concluída com sucesso."><span class="description">Processa a consulta e retorna VERDADEIRO se foi concluída com sucesso.</span><pre>processaConsulta()</pre></a></li>
+<li class="method public "><a href="#setCepDestino" title="setCepDestino :: Informa o CEP de destino para a pesquisa."><span class="description">Informa o CEP de destino para a pesquisa.</span><pre>setCepDestino()</pre></a></li>
+<li class="method public "><a href="#setCepOrigem" title="setCepOrigem :: Informa o CEP de origem para a pesquisa."><span class="description">Informa o CEP de origem para a pesquisa.</span><pre>setCepOrigem()</pre></a></li>
+<li class="method public "><a href="#setDocumentoDestino" title="setDocumentoDestino :: Informa o documento CPF/CNPJ do destinatário da mercadoria."><span class="description">Informa o documento CPF/CNPJ do destinatário da mercadoria.</span><pre>setDocumentoDestino()</pre></a></li>
+<li class="method public "><a href="#setIdOrigem" title="setIdOrigem :: Informa o ID da origem."><span class="description">Informa o ID da origem.</span><pre>setIdOrigem()</pre></a></li>
+<li class="method public "><a href="#setPeso" title="setPeso :: Informa o peso em gramas da mercadoria."><span class="description">Informa o peso em gramas da mercadoria.</span><pre>setPeso()</pre></a></li>
+<li class="method public "><a href="#setTipoFrete" title="setTipoFrete :: Informa o tipo de frete."><span class="description">Informa o tipo de frete.</span><pre>setTipoFrete()</pre></a></li>
+<li class="method public "><a href="#setValorNF" title="setValorNF :: Informa o valor da NF da mercadoria."><span class="description">Informa o valor da NF da mercadoria.</span><pre>setValorNF()</pre></a></li>
+<li class="method public "><a href="#setVolume" title="setVolume :: Informa o volume da mercadoria."><span class="description">Informa o volume da mercadoria.</span><pre>setVolume()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected inherited"><a href="#getCnpjEmpresa" title="getCnpjEmpresa :: Retorna o CNPJ da empresa que possui contrato com a Braspress."><span class="description">Retorna o CNPJ da empresa que possui contrato com a Braspress.</span><pre>getCnpjEmpresa()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header private">» Private</li>
+<li class="property private "><a href="#%24cepDestino" title="$cepDestino :: Contém o CEP de destino."><span class="description">Contém o CEP de destino.</span><pre>$cepDestino</pre></a></li>
+<li class="property private "><a href="#%24cepOrigem" title="$cepOrigem :: Contém o CEP de origem."><span class="description">Contém o CEP de origem.</span><pre>$cepOrigem</pre></a></li>
+<li class="property private inherited"><a href="#%24cnpjEmpresa" title="$cnpjEmpresa :: Contém o CNPJ da empresa que possui contrato com a Braspress."><span class="description">Contém o CNPJ da empresa que possui contrato com a Braspress.</span><pre>$cnpjEmpresa</pre></a></li>
+<li class="property private "><a href="#%24documentoDestino" title="$documentoDestino :: Contém o CPF/CNPJ de destino."><span class="description">Contém o CPF/CNPJ de destino.</span><pre>$documentoDestino</pre></a></li>
+<li class="property private "><a href="#%24idOrigem" title="$idOrigem :: Contém o ID de origem."><span class="description">Contém o ID de origem.</span><pre>$idOrigem</pre></a></li>
+<li class="property private "><a href="#%24peso" title="$peso :: Contém o peso em gramas da mercadoria."><span class="description">Contém o peso em gramas da mercadoria.</span><pre>$peso</pre></a></li>
+<li class="property private "><a href="#%24resultado" title="$resultado :: Contém o resultado da consulta"><span class="description">Contém o resultado da consulta</span><pre>$resultado</pre></a></li>
+<li class="property private "><a href="#%24tipoFrete" title="$tipoFrete :: Contém o tipo de frete;"><span class="description">Contém o tipo de frete;</span><pre>$tipoFrete</pre></a></li>
+<li class="property private "><a href="#%24valorNF" title="$valorNF :: Contém o valor da NF."><span class="description">Contém o valor da NF.</span><pre>$valorNF</pre></a></li>
+<li class="property private "><a href="#%24volume" title="$volume :: Contém a quantidade de volumes do envio."><span class="description">Contém a quantidade de volumes do envio.</span><pre>$volume</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  inherited"><a href="#TIPO_FRETE_AEREO" title="TIPO_FRETE_AEREO :: Contém o tipo de frete aéreo."><span class="description">Contém o tipo de frete aéreo.</span><pre>TIPO_FRETE_AEREO</pre></a></li>
+<li class="constant  inherited"><a href="#TIPO_FRETE_RODOVIARIO" title="TIPO_FRETE_RODOVIARIO :: Contém o tipo de frete rodoviário."><span class="description">Contém o tipo de frete rodoviário.</span><pre>TIPO_FRETE_RODOVIARIO</pre></a></li>
+<li class="constant  inherited"><a href="#URL_CALCULADOR" title="URL_CALCULADOR :: URL do calculador de frete da Braspress."><span class="description">URL do calculador de frete da Braspress.</span><pre>URL_CALCULADOR</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CBraspressCalculaFrete" id="\BraspressCalculaFrete"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/BraspressCalculaFrete.html">BraspressCalculaFrete</a>
+</li>
+</ul>
+<div href="../classes/BraspressCalculaFrete.html" class="element class">
+<p class="short_description">Classe para realizar o cálculo de frete monstrando todos os detalhes do cálculo.</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="mailto:ivan.whm@me.com">Ivan Wilhelm</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/braspress.html">braspress</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>final</th>
+<td></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Cria um objeto da Braspress.</h2>
+<pre>__construct(double $cnpjEmpresa) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Braspress::__construct()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$cnpjEmpresa</h4>
+<code>double</code><p>CNPJ da empresa que possui contrato com a Braspress.</p></div>
+</div></div>
+</div>
+<a name="getResultado" id="getResultado"></a><div class="element clickable method public getResultado" data-toggle="collapse" data-target=".getResultado .collapse">
+<h2>Retorna o resultado da consulta.</h2>
+<pre>getResultado() : <a href="../classes/BraspressCalculaFreteResultado.html">\BraspressCalculaFreteResultado</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/BraspressCalculaFreteResultado.html">\BraspressCalculaFreteResultado</a></code></div>
+</div></div>
+</div>
+<a name="processaConsulta" id="processaConsulta"></a><div class="element clickable method public processaConsulta" data-toggle="collapse" data-target=".processaConsulta .collapse">
+<h2>Processa a consulta e retorna VERDADEIRO se foi concluída com sucesso.</h2>
+<pre>processaConsulta() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.exception.php">\Exception</a></code></th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a name="setCepDestino" id="setCepDestino"></a><div class="element clickable method public setCepDestino" data-toggle="collapse" data-target=".setCepDestino .collapse">
+<h2>Informa o CEP de destino para a pesquisa.</h2>
+<pre>setCepDestino(double $cepDestino) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$cepDestino</h4>
+<code>double</code><p>CEP de destino.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.exception.php">\Exception</a></code></th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="setCepOrigem" id="setCepOrigem"></a><div class="element clickable method public setCepOrigem" data-toggle="collapse" data-target=".setCepOrigem .collapse">
+<h2>Informa o CEP de origem para a pesquisa.</h2>
+<pre>setCepOrigem(double $cepOrigem) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$cepOrigem</h4>
+<code>double</code><p>CEP de origem.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="http://php.net/manual/en/class.exception.php">\Exception</a></code></th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="setDocumentoDestino" id="setDocumentoDestino"></a><div class="element clickable method public setDocumentoDestino" data-toggle="collapse" data-target=".setDocumentoDestino .collapse">
+<h2>Informa o documento CPF/CNPJ do destinatário da mercadoria.</h2>
+<pre>setDocumentoDestino(double $documentoDestino) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$documentoDestino</h4>
+<code>double</code><p>CPF/CNPJ do destinatário da mercadoria.</p>
+</div>
+</div></div>
+</div>
+<a name="setIdOrigem" id="setIdOrigem"></a><div class="element clickable method public setIdOrigem" data-toggle="collapse" data-target=".setIdOrigem .collapse">
+<h2>Informa o ID da origem.</h2>
+<pre>setIdOrigem(double $idOrigem) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>Este ID é informado pela Braspress no ato da assinatura do contrato.</p></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$idOrigem</h4>
+<code>double</code><p>ID de origem.</p></div>
+</div></div>
+</div>
+<a name="setPeso" id="setPeso"></a><div class="element clickable method public setPeso" data-toggle="collapse" data-target=".setPeso .collapse">
+<h2>Informa o peso em gramas da mercadoria.</h2>
+<pre>setPeso(double $peso) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$peso</h4>
+<code>double</code><p>Peso em gramas.</p></div>
+</div></div>
+</div>
+<a name="setTipoFrete" id="setTipoFrete"></a><div class="element clickable method public setTipoFrete" data-toggle="collapse" data-target=".setTipoFrete .collapse">
+<h2>Informa o tipo de frete.</h2>
+<pre>setTipoFrete(string $tipoFrete) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$tipoFrete</h4>
+<code>string</code><p>Tipo de frete.</p></div>
+</div></div>
+</div>
+<a name="setValorNF" id="setValorNF"></a><div class="element clickable method public setValorNF" data-toggle="collapse" data-target=".setValorNF .collapse">
+<h2>Informa o valor da NF da mercadoria.</h2>
+<pre>setValorNF(double $valorNF) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$valorNF</h4>
+<code>double</code><p>Valor da NF.</p></div>
+</div></div>
+</div>
+<a name="setVolume" id="setVolume"></a><div class="element clickable method public setVolume" data-toggle="collapse" data-target=".setVolume .collapse">
+<h2>Informa o volume da mercadoria.</h2>
+<pre>setVolume(double $volume) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$volume</h4>
+<code>double</code><p>Volume da mercadoria.</p></div>
+</div></div>
+</div>
+<a name="getCnpjEmpresa" id="getCnpjEmpresa"></a><div class="element clickable method protected getCnpjEmpresa" data-toggle="collapse" data-target=".getCnpjEmpresa .collapse">
+<h2>Retorna o CNPJ da empresa que possui contrato com a Braspress.</h2>
+<pre>getCnpjEmpresa() : double</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>protected</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Braspress::getCnpjEmpresa()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>double</code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24cepDestino" id="$cepDestino"> </a><div class="element clickable property private $cepDestino" data-toggle="collapse" data-target=".$cepDestino .collapse">
+<h2>Contém o CEP de destino.</h2>
+<pre>$cepDestino : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24cepOrigem" id="$cepOrigem"> </a><div class="element clickable property private $cepOrigem" data-toggle="collapse" data-target=".$cepOrigem .collapse">
+<h2>Contém o CEP de origem.</h2>
+<pre>$cepOrigem : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24cnpjEmpresa" id="$cnpjEmpresa"> </a><div class="element clickable property private $cnpjEmpresa" data-toggle="collapse" data-target=".$cnpjEmpresa .collapse">
+<h2>Contém o CNPJ da empresa que possui contrato com a Braspress.</h2>
+<pre>$cnpjEmpresa : double</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>private</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Braspress::$$cnpjEmpresa</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="%24documentoDestino" id="$documentoDestino"> </a><div class="element clickable property private $documentoDestino" data-toggle="collapse" data-target=".$documentoDestino .collapse">
+<h2>Contém o CPF/CNPJ de destino.</h2>
+<pre>$documentoDestino : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24idOrigem" id="$idOrigem"> </a><div class="element clickable property private $idOrigem" data-toggle="collapse" data-target=".$idOrigem .collapse">
+<h2>Contém o ID de origem.</h2>
+<pre>$idOrigem : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>Este ID é informado pela Braspress no ato da assinatura do contrato.</p></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24peso" id="$peso"> </a><div class="element clickable property private $peso" data-toggle="collapse" data-target=".$peso .collapse">
+<h2>Contém o peso em gramas da mercadoria.</h2>
+<pre>$peso : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24resultado" id="$resultado"> </a><div class="element clickable property private $resultado" data-toggle="collapse" data-target=".$resultado .collapse">
+<h2>Contém o resultado da consulta</h2>
+<pre>$resultado : <a href="../classes/BraspressCalculaFreteResultado.html">\BraspressCalculaFreteResultado</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24tipoFrete" id="$tipoFrete"> </a><div class="element clickable property private $tipoFrete" data-toggle="collapse" data-target=".$tipoFrete .collapse">
+<h2>Contém o tipo de frete;</h2>
+<pre>$tipoFrete : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24valorNF" id="$valorNF"> </a><div class="element clickable property private $valorNF" data-toggle="collapse" data-target=".$valorNF .collapse">
+<h2>Contém o valor da NF.</h2>
+<pre>$valorNF : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24volume" id="$volume"> </a><div class="element clickable property private $volume" data-toggle="collapse" data-target=".$volume .collapse">
+<h2>Contém a quantidade de volumes do envio.</h2>
+<pre>$volume : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="TIPO_FRETE_AEREO" id="TIPO_FRETE_AEREO"> </a><div class="element clickable constant  TIPO_FRETE_AEREO" data-toggle="collapse" data-target=".TIPO_FRETE_AEREO .collapse">
+<h2>Contém o tipo de frete aéreo.</h2>
+<pre>TIPO_FRETE_AEREO </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Braspress::TIPO_FRETE_AEREO</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="TIPO_FRETE_RODOVIARIO" id="TIPO_FRETE_RODOVIARIO"> </a><div class="element clickable constant  TIPO_FRETE_RODOVIARIO" data-toggle="collapse" data-target=".TIPO_FRETE_RODOVIARIO .collapse">
+<h2>Contém o tipo de frete rodoviário.</h2>
+<pre>TIPO_FRETE_RODOVIARIO </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Braspress::TIPO_FRETE_RODOVIARIO</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a name="URL_CALCULADOR" id="URL_CALCULADOR"> </a><div class="element clickable constant  URL_CALCULADOR" data-toggle="collapse" data-target=".URL_CALCULADOR .collapse">
+<h2>URL do calculador de frete da Braspress.</h2>
+<pre>URL_CALCULADOR </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\Braspress::URL_CALCULADOR</td>
+</tr>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
+            generated on 2012-08-30T15:50:27-03:00.<br></footer></div>
+</div>
+</body>
+</html>

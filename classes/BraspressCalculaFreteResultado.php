@@ -5,6 +5,7 @@
    * os detalhes do cálculo.
    * 
    * @author Ivan Wilhelm <ivan.whm@me.com>
+   * @package braspress
    * @version 1.0
    * @final
    */
@@ -14,96 +15,112 @@
     /**
      * Contém o valor total do frete.
      * @var double
+     * @access private
      */
     private $totalFrete;
 
     /**
      * Contém o percentual de ICMS do frete.
      * @var double
+     * @access private
      */
     private $icms;
 
     /**
      * Contém o valor do ICMS do frete.
      * @var double
+     * @access private
      */
     private $valorIcms;
 
     /**
      * Contém o valor do frete por peso.
      * @var double
+     * @access private
      */
     private $fretePeso;
 
     /**
      * Contém o valor do frete por valor.
      * @var double
+     * @access private
      */
     private $freteValor;
 
     /**
      * Contém a taxa de cadastro da seção.
      * @var double
+     * @access private
      */
     private $taxaSecaoCad;
 
     /**
      * Contém a taxa de pedágio.
      * @var double
+     * @access private
      */
     private $taxaPedagio;
 
     /**
      * Contém a taxa de despacho.
      * @var double
+     * @access private
      */
     private $taxaDespacho;
 
     /**
      * Contém a taxa de ITR.
      * @var double
+     * @access private
      */
     private $taxaITR;
 
     /**
      * Contém outras taxas.
      * @var double
+     * @access private
      */
     private $taxaOutros;
 
     /**
      * Contém a taxa de ademe.
      * @var double
+     * @access private
      */
     private $taxaAdeme;
 
     /**
      * Contém o valor do subtotal do frete.
      * @var double
+     * @access private
      */
     private $subtotal;
 
     /**
      * Contém a mensagem de erro, caso tenha havido
      * @var string
+     * @access private
      */
     private $mensagemErro;
 
     /**
      * Contém o prazo de entrega do frete.
      * @var double
+     * @access private
      */
     private $prazoEntrega;
 
     /**
      * Indica se a consulta foi realizada com sucesso.
      * @var boolean
+     * @access private
      */
     private $sucesso;
 
     /**
      * Cria um objeto de resultado.
      * @param stdClass $retorno Retorno da Braspress.
+     * @access public
      */
     public function __construct(stdClass $retorno)
     {
@@ -128,6 +145,7 @@
     /**
      * Informa o valor total do frete.
      * @param double $totalFrete Valor total do frete.
+     * @access private
      */
     private function setTotalFrete($totalFrete)
     {
@@ -137,6 +155,7 @@
     /**
      * Informa o percentual de ICMS do frete.
      * @param double $icms Percentual de ICMS
+     * @access private
      */
     private function setIcms($icms)
     {
@@ -146,6 +165,7 @@
     /**
      * Informa o valor do ICMS do frete.
      * @param double $valorIcms Valor do ICMS do frete.
+     * @access private
      */
     private function setValorIcms($valorIcms)
     {
@@ -155,6 +175,7 @@
     /**
      * Informa o valor do frete por peso.
      * @param double $fretePeso Valor do frete por peso.
+     * @access private
      */
     private function setFretePeso($fretePeso)
     {
@@ -164,6 +185,7 @@
     /**
      * Informa o valor do frete por valor.
      * @param double $freteValor Valor do frete por valor.
+     * @access private
      */
     private function setFreteValor($freteValor)
     {
@@ -173,6 +195,7 @@
     /**
      * Informa o valor da taxa da seção cadastro.
      * @param double $taxaSecaoCad Taxa da seção cadastro.
+     * @access private
      */
     private function setTaxaSecaoCad($taxaSecaoCad)
     {
@@ -182,6 +205,7 @@
     /**
      * Informa o valor da taxa de pedágio.
      * @param double $taxaPedagio Taxa de pedágio.
+     * @access private
      */
     private function setTaxaPedagio($taxaPedagio)
     {
@@ -191,6 +215,7 @@
     /**
      * Informa o valor da taxa de despacho.
      * @param double $taxaDespacho Taxa de despacho.
+     * @access private
      */
     private function setTaxaDespacho($taxaDespacho)
     {
@@ -200,6 +225,7 @@
     /**
      * Informa o valor da taxa de ITR.
      * @param double $taxaITR Taxa de ITR.
+     * @access private
      */
     private function setTaxaITR($taxaITR)
     {
@@ -209,6 +235,7 @@
     /**
      * Informa o valor das outras taxas.
      * @param double $taxaOutros Outras taxas.
+     * @access private
      */
     private function setTaxaOutros($taxaOutros)
     {
@@ -218,6 +245,7 @@
     /**
      * Informa o valor da taxa de ademe.
      * @param double $taxaAdeme Taxa de ademe.
+     * @access private
      */
     private function setTaxaAdeme($taxaAdeme)
     {
@@ -227,6 +255,7 @@
     /**
      * Informa o valor do subtotal do frete.
      * @param double $subtotal Valor do subtotal do frete.
+     * @access private
      */
     private function setSubtotal($subtotal)
     {
@@ -236,6 +265,7 @@
     /**
      * Informa a mensagem de erro, caso tenha havido erro.
      * @param string $mensagemErro Mensagem de erro, caso tenha havido erro.
+     * @access private
      */
     private function setMensagemErro($mensagemErro)
     {
@@ -245,6 +275,7 @@
     /**
      * Informa o prazo de entrega do frete.
      * @param double $prazoEntrega Prazo de entrega do frete.
+     * @access private
      */
     private function setPrazoEntrega($prazoEntrega)
     {
@@ -254,6 +285,7 @@
     /**
      * Indica se a consulta foi concluída com sucesso.
      * @param boolean $sucesso Indica se a consulta foi concluída com sucesso.
+     * @access private
      */
     private function setSucesso($sucesso)
     {
@@ -263,6 +295,7 @@
     /**
      * Retorna o valor total do frete.
      * @return double
+     * @access public
      */
     public function getTotalFrete()
     {
@@ -272,6 +305,7 @@
     /**
      * Retorna o percentual de ICMS.
      * @return double
+     * @access public
      */
     public function getIcms()
     {
@@ -281,6 +315,7 @@
     /**
      * Retorna o valor do ICMS.
      * @return double
+     * @access public
      */
     public function getValorIcms()
     {
@@ -290,6 +325,7 @@
     /**
      * Retorna o valor do frete por peso.
      * @return double
+     * @access public
      */
     public function getFretePeso()
     {
@@ -299,6 +335,7 @@
     /**
      * Retorna o valor do frete por valor.
      * @return double
+     * @access public
      */
     public function getFreteValor()
     {
@@ -308,6 +345,7 @@
     /**
      * Retorna o valor da taxa de seção cadastro.
      * @return double
+     * @access public
      */
     public function getTaxaSecaoCad()
     {
@@ -317,6 +355,7 @@
     /**
      * Retorna o valor da taxa de pedágio.
      * @return double
+     * @access public
      */
     public function getTaxaPedagio()
     {
@@ -326,6 +365,7 @@
     /**
      * Retorna o valor da taxa de despacho.
      * @return double
+     * @access public
      */
     public function getTaxaDespacho()
     {
@@ -335,6 +375,7 @@
     /**
      * Retorna o valor da taxa de ITR.
      * @return double
+     * @access public
      */
     public function getTaxaITR()
     {
@@ -344,6 +385,7 @@
     /**
      * Retorna o valor das outras taxas.
      * @return double
+     * @access public
      */
     public function getTaxaOutros()
     {
@@ -353,6 +395,7 @@
     /**
      * Retorna o valor da taxa de ademe.
      * @return double
+     * @access public
      */
     public function getTaxaAdeme()
     {
@@ -362,6 +405,7 @@
     /**
      * Retorna o valor do subtotal do frete.
      * @return double
+     * @access public
      */
     public function getSubtotal()
     {
@@ -371,6 +415,7 @@
     /**
      * Retorna a mensagem de erro, caso tenha havido erro.
      * @return string
+     * @access public
      */
     public function getMensagemErro()
     {
@@ -380,6 +425,7 @@
     /**
      * Retorna o prazo de entrega do frete.
      * @return double
+     * @access public
      */
     public function getPrazoEntrega()
     {
@@ -389,6 +435,7 @@
     /**
      * Indica se a consulta foi concluída com sucesso.
      * @return boolean
+     * @access public
      */
     public function getSucesso()
     {

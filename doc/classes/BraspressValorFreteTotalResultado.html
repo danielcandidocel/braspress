@@ -1,0 +1,262 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Braspress » \BraspressValorFreteTotalResultado</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Braspress</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/braspress.html"><i class="icon-folder-open"></i> braspress</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">9</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#__construct" title="__construct :: Cria um objeto de retorno."><span class="description">Cria um objeto de retorno.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#getMensagemErro" title="getMensagemErro :: Retorna a mensagem de erro, caso tenha havido."><span class="description">Retorna a mensagem de erro, caso tenha havido.</span><pre>getMensagemErro()</pre></a></li>
+<li class="method public "><a href="#getSucesso" title="getSucesso :: Indica o retorno da consulta."><span class="description">Indica o retorno da consulta.</span><pre>getSucesso()</pre></a></li>
+<li class="method public "><a href="#getValorFrete" title="getValorFrete :: Retorna o valor total do frete."><span class="description">Retorna o valor total do frete.</span><pre>getValorFrete()</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="method private "><a href="#setMensagemErro" title="setMensagemErro :: Indica a mensagem de erro."><span class="description">Indica a mensagem de erro.</span><pre>setMensagemErro()</pre></a></li>
+<li class="method private "><a href="#setSucesso" title="setSucesso :: Indica se a consulta foi realizada com sucesso."><span class="description">Indica se a consulta foi realizada com sucesso.</span><pre>setSucesso()</pre></a></li>
+<li class="method private "><a href="#setValorFrete" title="setValorFrete :: Indica o valor do frete."><span class="description">Indica o valor do frete.</span><pre>setValorFrete()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header private">» Private</li>
+<li class="property private "><a href="#%24mensagemErro" title="$mensagemErro :: Contém a mensagem de erro."><span class="description">Contém a mensagem de erro.</span><pre>$mensagemErro</pre></a></li>
+<li class="property private "><a href="#%24sucesso" title="$sucesso :: Indica se o retorno foi efetuado com sucesso."><span class="description">Indica se o retorno foi efetuado com sucesso.</span><pre>$sucesso</pre></a></li>
+<li class="property private "><a href="#%24valorFrete" title="$valorFrete :: Contém o valor do frete"><span class="description">Contém o valor do frete</span><pre>$valorFrete</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CBraspressValorFreteTotalResultado" id="\BraspressValorFreteTotalResultado"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/BraspressValorFreteTotalResultado.html">BraspressValorFreteTotalResultado</a>
+</li>
+</ul>
+<div href="../classes/BraspressValorFreteTotalResultado.html" class="element class">
+<p class="short_description">Classe que contém o retorno de uma consulta de valor de frete da Braspress.</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="mailto:ivan.whm@me.com">Ivan Wilhelm</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/braspress.html">braspress</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>final</th>
+<td></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Cria um objeto de retorno.</h2>
+<pre>__construct(array $retorno) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$retorno</h4>
+<code>array</code><p>Retorno da consulta</p></div>
+</div></div>
+</div>
+<a name="getMensagemErro" id="getMensagemErro"></a><div class="element clickable method public getMensagemErro" data-toggle="collapse" data-target=".getMensagemErro .collapse">
+<h2>Retorna a mensagem de erro, caso tenha havido.</h2>
+<pre>getMensagemErro() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getSucesso" id="getSucesso"></a><div class="element clickable method public getSucesso" data-toggle="collapse" data-target=".getSucesso .collapse">
+<h2>Indica o retorno da consulta.</h2>
+<pre>getSucesso() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a name="getValorFrete" id="getValorFrete"></a><div class="element clickable method public getValorFrete" data-toggle="collapse" data-target=".getValorFrete .collapse">
+<h2>Retorna o valor total do frete.</h2>
+<pre>getValorFrete() : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>double</code></div>
+</div></div>
+</div>
+<a name="setMensagemErro" id="setMensagemErro"></a><div class="element clickable method private setMensagemErro" data-toggle="collapse" data-target=".setMensagemErro .collapse">
+<h2>Indica a mensagem de erro.</h2>
+<pre>setMensagemErro(string $mensagemErro) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$mensagemErro</h4>
+<code>string</code><p>Mensagem de erro.</p></div>
+</div></div>
+</div>
+<a name="setSucesso" id="setSucesso"></a><div class="element clickable method private setSucesso" data-toggle="collapse" data-target=".setSucesso .collapse">
+<h2>Indica se a consulta foi realizada com sucesso.</h2>
+<pre>setSucesso(boolean $sucesso) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sucesso</h4>
+<code>boolean</code><p>Indica se houve sucesso.</p></div>
+</div></div>
+</div>
+<a name="setValorFrete" id="setValorFrete"></a><div class="element clickable method private setValorFrete" data-toggle="collapse" data-target=".setValorFrete .collapse">
+<h2>Indica o valor do frete.</h2>
+<pre>setValorFrete(double $valorFrete) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$valorFrete</h4>
+<code>double</code><p>Valor do frete.</p></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24mensagemErro" id="$mensagemErro"> </a><div class="element clickable property private $mensagemErro" data-toggle="collapse" data-target=".$mensagemErro .collapse">
+<h2>Contém a mensagem de erro.</h2>
+<pre>$mensagemErro : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24sucesso" id="$sucesso"> </a><div class="element clickable property private $sucesso" data-toggle="collapse" data-target=".$sucesso .collapse">
+<h2>Indica se o retorno foi efetuado com sucesso.</h2>
+<pre>$sucesso : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24valorFrete" id="$valorFrete"> </a><div class="element clickable property private $valorFrete" data-toggle="collapse" data-target=".$valorFrete .collapse">
+<h2>Contém o valor do frete</h2>
+<pre>$valorFrete : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
+            generated on 2012-08-30T15:50:27-03:00.<br></footer></div>
+</div>
+</body>
+</html>

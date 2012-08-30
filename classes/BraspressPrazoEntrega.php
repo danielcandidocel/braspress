@@ -4,6 +4,7 @@
    * Classe para realizar a consulta de prazo de entrega através de dois ceps.
    * 
    * @author Ivan Wilhelm <ivan.whm@me.com>
+   * @package braspress
    * @version 1.0
    * @final
    */
@@ -13,24 +14,28 @@
     /**
      * Contém o CEP de origem.
      * @var double
+     * @access private
      */
     private $cepOrigem;
 
     /**
      * Contém o CEP de destino.
      * @var double
+     * @access private
      */
     private $cepDestino;
 
     /**
      * Contém o resultado da consulta.
      * @var BraspressPrazoEntregaResultado
+     * @access private
      */
     private $resultado;
 
     /**
      * Informa o CEP de origem para a pesquisa.
      * @param double $cepOrigem CEP de origem.
+     * @access public
      * @throws Exception
      */
     public function setCepOrigem($cepOrigem)
@@ -44,6 +49,7 @@
     /**
      * Informa o CEP de destino para a pesquisa.
      * @param double $cepDestino CEP de destino.
+     * @access public
      * @throws Exception
      */
     public function setCepDestino($cepDestino)
@@ -57,6 +63,7 @@
     /**
      * Processa a consulta e retorna VERDADEIRO se foi concluída com sucesso.
      * @return boolean
+     * @access public
      */
     public function processaConsulta()
     {
@@ -96,6 +103,7 @@
     /**
      * Retorna o resultado da consulta.
      * @return BraspressPrazoEntregaResultado
+     * @access public
      */
     public function getResultado()
     {

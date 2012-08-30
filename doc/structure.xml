@@ -1,0 +1,2223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a9" title="Braspress">
+  <file path="classes/Braspress.php" hash="291acd76ccd9300e0a7e43adc11680ec" package="Default">
+    <class final="false" abstract="false" namespace="global" line="11" package="braspress">
+      <extends/>
+      <name>Braspress</name>
+      <full_name>\Braspress</full_name>
+      <docblock line="2">
+        <description><![CDATA[Page-level DocBlock
+Classe base para os serviços de cálculo de frete da Braspress.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="author" description="Ivan Wilhelm &lt;ivan.whm@me.com&gt;"/>
+        <tag line="2" name="package" description="braspress"/>
+        <tag line="2" name="version" description="1.0"/>
+        <tag line="2" name="abstract" description=""/>
+      </docblock>
+      <constant namespace="global" line="18" package="braspress">
+        <name>URL_CALCULADOR</name>
+        <full_name>URL_CALCULADOR</full_name>
+        <value><![CDATA['http://tracking.braspress.com.br/wscalculafreteisapi.dll/wsdl/IWSCalcFrete?wsdl']]></value>
+        <docblock line="13">
+          <description><![CDATA[URL do calculador de frete da Braspress.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="access" description="public"/>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="23" package="braspress">
+        <name>TIPO_FRETE_RODOVIARIO</name>
+        <full_name>TIPO_FRETE_RODOVIARIO</full_name>
+        <value><![CDATA['1']]></value>
+        <docblock line="19">
+          <description><![CDATA[Contém o tipo de frete rodoviário.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="19" name="access" description="public"/>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="28" package="braspress">
+        <name>TIPO_FRETE_AEREO</name>
+        <full_name>TIPO_FRETE_AEREO</full_name>
+        <value><![CDATA['2']]></value>
+        <docblock line="24">
+          <description><![CDATA[Contém o tipo de frete aéreo.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="24" name="access" description="public"/>
+        </docblock>
+      </constant>
+      <property final="false" static="false" visibility="private" line="35" namespace="global" package="Default">
+        <name>$cnpjEmpresa</name>
+        <default><![CDATA[]]></default>
+        <docblock line="30">
+          <description><![CDATA[Contém o CNPJ da empresa que possui contrato com a Braspress.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="30" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="30" name="access" description="private"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="42" package="braspress">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="37">
+          <description><![CDATA[Cria um objeto da Braspress.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="37" name="param" description="CNPJ da empresa que possui contrato com a Braspress." type="double" variable="$cnpjEmpresa">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="37" name="access" description="public"/>
+        </docblock>
+        <argument line="42">
+          <name>$cnpjEmpresa</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="52" package="braspress">
+        <name>getCnpjEmpresa</name>
+        <full_name>getCnpjEmpresa</full_name>
+        <docblock line="47">
+          <description><![CDATA[Retorna o CNPJ da empresa que possui contrato com a Braspress.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="47" name="return" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="47" name="access" description="protected"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="true" static="false" visibility="public" namespace="global" line="64" package="braspress">
+        <name>processaConsulta</name>
+        <full_name>processaConsulta</full_name>
+        <docblock line="57">
+          <description><![CDATA[Realiza o processamento da consulta.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="57" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="57" name="access" description="public"/>
+          <tag line="57" name="abstract" description=""/>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file classes/Braspress.php</error>
+    </parse_markers>
+  </file>
+  <file path="classes/BraspressCalculaFrete.php" hash="ccf0dd786d7139a1317dd96b91ffd2a5" package="Default">
+    <class final="false" abstract="false" namespace="global" line="11" package="braspress">
+      <extends>\Braspress</extends>
+      <name>BraspressCalculaFrete</name>
+      <full_name>\BraspressCalculaFrete</full_name>
+      <docblock line="3">
+        <description><![CDATA[Classe para realizar o cálculo de frete monstrando todos os detalhes do cálculo.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="3" name="author" description="Ivan Wilhelm &lt;ivan.whm@me.com&gt;"/>
+        <tag line="3" name="package" description="braspress"/>
+        <tag line="3" name="version" description="1.0"/>
+        <tag line="3" name="final" description=""/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="20" namespace="global" package="Default">
+        <name>$idOrigem</name>
+        <default><![CDATA[]]></default>
+        <docblock line="14">
+          <description><![CDATA[Contém o ID de origem.]]></description>
+          <long-description><![CDATA[<p>Este ID é informado pela Braspress no ato da assinatura do contrato.</p>]]></long-description>
+          <tag line="14" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="14" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="27" namespace="global" package="Default">
+        <name>$cepOrigem</name>
+        <default><![CDATA[]]></default>
+        <docblock line="22">
+          <description><![CDATA[Contém o CEP de origem.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="22" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="22" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="34" namespace="global" package="Default">
+        <name>$cepDestino</name>
+        <default><![CDATA[]]></default>
+        <docblock line="29">
+          <description><![CDATA[Contém o CEP de destino.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="29" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="29" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="41" namespace="global" package="Default">
+        <name>$tipoFrete</name>
+        <default><![CDATA[]]></default>
+        <docblock line="36">
+          <description><![CDATA[Contém o tipo de frete;]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="36" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="36" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="48" namespace="global" package="Default">
+        <name>$documentoDestino</name>
+        <default><![CDATA[]]></default>
+        <docblock line="43">
+          <description><![CDATA[Contém o CPF/CNPJ de destino.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="43" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="43" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="55" namespace="global" package="Default">
+        <name>$peso</name>
+        <default><![CDATA[]]></default>
+        <docblock line="50">
+          <description><![CDATA[Contém o peso em gramas da mercadoria.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="50" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="50" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="62" namespace="global" package="Default">
+        <name>$valorNF</name>
+        <default><![CDATA[]]></default>
+        <docblock line="57">
+          <description><![CDATA[Contém o valor da NF.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="57" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="57" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="69" namespace="global" package="Default">
+        <name>$volume</name>
+        <default><![CDATA[]]></default>
+        <docblock line="64">
+          <description><![CDATA[Contém a quantidade de volumes do envio.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="64" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="64" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="76" namespace="global" package="Default">
+        <name>$resultado</name>
+        <default><![CDATA[]]></default>
+        <docblock line="71">
+          <description><![CDATA[Contém o resultado da consulta]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="71" name="var" description="" type="\BraspressCalculaFreteResultado">
+            <type by_reference="false">\BraspressCalculaFreteResultado</type>
+          </tag>
+          <tag line="71" name="access" description="private"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="84" package="braspress">
+        <name>setIdOrigem</name>
+        <full_name>setIdOrigem</full_name>
+        <docblock line="78">
+          <description><![CDATA[Informa o ID da origem.]]></description>
+          <long-description><![CDATA[<p>Este ID é informado pela Braspress no ato da assinatura do contrato.</p>]]></long-description>
+          <tag line="78" name="param" description="ID de origem." type="double" variable="$idOrigem">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="78" name="access" description="public"/>
+        </docblock>
+        <argument line="84">
+          <name>$idOrigem</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="95" package="braspress">
+        <name>setCepOrigem</name>
+        <full_name>setCepOrigem</full_name>
+        <docblock line="89">
+          <description><![CDATA[Informa o CEP de origem para a pesquisa.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="89" name="param" description="CEP de origem." type="double" variable="$cepOrigem">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="89" name="access" description="public"/>
+          <tag line="89" name="throws" description="" type="\Exception">
+            <type by_reference="false">\Exception</type>
+          </tag>
+        </docblock>
+        <argument line="95">
+          <name>$cepOrigem</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="109" package="braspress">
+        <name>setCepDestino</name>
+        <full_name>setCepDestino</full_name>
+        <docblock line="103">
+          <description><![CDATA[Informa o CEP de destino para a pesquisa.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="103" name="param" description="CEP de destino." type="double" variable="$cepDestino">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="103" name="access" description="public"/>
+          <tag line="103" name="throws" description="" type="\Exception">
+            <type by_reference="false">\Exception</type>
+          </tag>
+        </docblock>
+        <argument line="109">
+          <name>$cepDestino</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="122" package="braspress">
+        <name>setTipoFrete</name>
+        <full_name>setTipoFrete</full_name>
+        <docblock line="117">
+          <description><![CDATA[Informa o tipo de frete.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="117" name="param" description="Tipo de frete." type="string" variable="$tipoFrete">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="117" name="access" description="public"/>
+        </docblock>
+        <argument line="122">
+          <name>$tipoFrete</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="135" package="braspress">
+        <name>setDocumentoDestino</name>
+        <full_name>setDocumentoDestino</full_name>
+        <docblock line="130">
+          <description><![CDATA[Informa o documento CPF/CNPJ do destinatário da mercadoria.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="130" name="param" description="CPF/CNPJ do destinatário da mercadoria." type="double" variable="$documentoDestino">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="130" name="access" description="public"/>
+        </docblock>
+        <argument line="135">
+          <name>$documentoDestino</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="145" package="braspress">
+        <name>setPeso</name>
+        <full_name>setPeso</full_name>
+        <docblock line="140">
+          <description><![CDATA[Informa o peso em gramas da mercadoria.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="140" name="param" description="Peso em gramas." type="double" variable="$peso">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="140" name="access" description="public"/>
+        </docblock>
+        <argument line="145">
+          <name>$peso</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="155" package="braspress">
+        <name>setValorNF</name>
+        <full_name>setValorNF</full_name>
+        <docblock line="150">
+          <description><![CDATA[Informa o valor da NF da mercadoria.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="150" name="param" description="Valor da NF." type="double" variable="$valorNF">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="150" name="access" description="public"/>
+        </docblock>
+        <argument line="155">
+          <name>$valorNF</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="165" package="braspress">
+        <name>setVolume</name>
+        <full_name>setVolume</full_name>
+        <docblock line="160">
+          <description><![CDATA[Informa o volume da mercadoria.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="160" name="param" description="Volume da mercadoria." type="double" variable="$volume">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="160" name="access" description="public"/>
+        </docblock>
+        <argument line="165">
+          <name>$volume</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="176" package="braspress">
+        <name>processaConsulta</name>
+        <full_name>processaConsulta</full_name>
+        <docblock line="170">
+          <description><![CDATA[Processa a consulta e retorna VERDADEIRO se foi concluída com sucesso.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="170" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="170" name="access" description="public"/>
+          <tag line="170" name="throws" description="" type="\Exception">
+            <type by_reference="false">\Exception</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="208" package="braspress">
+        <name>getResultado</name>
+        <full_name>getResultado</full_name>
+        <docblock line="203">
+          <description><![CDATA[Retorna o resultado da consulta.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="203" name="return" description="" type="\BraspressCalculaFreteResultado">
+            <type by_reference="false">\BraspressCalculaFreteResultado</type>
+          </tag>
+          <tag line="203" name="access" description="public"/>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file classes/BraspressCalculaFrete.php</error>
+    </parse_markers>
+  </file>
+  <file path="classes/BraspressCalculaFreteResultado.php" hash="9988c151fd4b97fe3ad1e4c659217603" package="Default">
+    <class final="false" abstract="false" namespace="global" line="12" package="braspress">
+      <extends/>
+      <name>BraspressCalculaFreteResultado</name>
+      <full_name>\BraspressCalculaFreteResultado</full_name>
+      <docblock line="3">
+        <description><![CDATA[Classe que irá conter o resultado do cálculo de frete monstrando todos
+os detalhes do cálculo.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="3" name="author" description="Ivan Wilhelm &lt;ivan.whm@me.com&gt;"/>
+        <tag line="3" name="package" description="braspress"/>
+        <tag line="3" name="version" description="1.0"/>
+        <tag line="3" name="final" description=""/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="20" namespace="global" package="Default">
+        <name>$totalFrete</name>
+        <default><![CDATA[]]></default>
+        <docblock line="15">
+          <description><![CDATA[Contém o valor total do frete.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="15" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="15" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="27" namespace="global" package="Default">
+        <name>$icms</name>
+        <default><![CDATA[]]></default>
+        <docblock line="22">
+          <description><![CDATA[Contém o percentual de ICMS do frete.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="22" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="22" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="34" namespace="global" package="Default">
+        <name>$valorIcms</name>
+        <default><![CDATA[]]></default>
+        <docblock line="29">
+          <description><![CDATA[Contém o valor do ICMS do frete.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="29" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="29" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="41" namespace="global" package="Default">
+        <name>$fretePeso</name>
+        <default><![CDATA[]]></default>
+        <docblock line="36">
+          <description><![CDATA[Contém o valor do frete por peso.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="36" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="36" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="48" namespace="global" package="Default">
+        <name>$freteValor</name>
+        <default><![CDATA[]]></default>
+        <docblock line="43">
+          <description><![CDATA[Contém o valor do frete por valor.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="43" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="43" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="55" namespace="global" package="Default">
+        <name>$taxaSecaoCad</name>
+        <default><![CDATA[]]></default>
+        <docblock line="50">
+          <description><![CDATA[Contém a taxa de cadastro da seção.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="50" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="50" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="62" namespace="global" package="Default">
+        <name>$taxaPedagio</name>
+        <default><![CDATA[]]></default>
+        <docblock line="57">
+          <description><![CDATA[Contém a taxa de pedágio.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="57" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="57" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="69" namespace="global" package="Default">
+        <name>$taxaDespacho</name>
+        <default><![CDATA[]]></default>
+        <docblock line="64">
+          <description><![CDATA[Contém a taxa de despacho.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="64" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="64" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="76" namespace="global" package="Default">
+        <name>$taxaITR</name>
+        <default><![CDATA[]]></default>
+        <docblock line="71">
+          <description><![CDATA[Contém a taxa de ITR.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="71" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="71" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="83" namespace="global" package="Default">
+        <name>$taxaOutros</name>
+        <default><![CDATA[]]></default>
+        <docblock line="78">
+          <description><![CDATA[Contém outras taxas.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="78" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="78" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="90" namespace="global" package="Default">
+        <name>$taxaAdeme</name>
+        <default><![CDATA[]]></default>
+        <docblock line="85">
+          <description><![CDATA[Contém a taxa de ademe.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="85" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="85" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="97" namespace="global" package="Default">
+        <name>$subtotal</name>
+        <default><![CDATA[]]></default>
+        <docblock line="92">
+          <description><![CDATA[Contém o valor do subtotal do frete.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="92" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="92" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="104" namespace="global" package="Default">
+        <name>$mensagemErro</name>
+        <default><![CDATA[]]></default>
+        <docblock line="99">
+          <description><![CDATA[Contém a mensagem de erro, caso tenha havido]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="99" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="99" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="111" namespace="global" package="Default">
+        <name>$prazoEntrega</name>
+        <default><![CDATA[]]></default>
+        <docblock line="106">
+          <description><![CDATA[Contém o prazo de entrega do frete.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="106" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="106" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="118" namespace="global" package="Default">
+        <name>$sucesso</name>
+        <default><![CDATA[]]></default>
+        <docblock line="113">
+          <description><![CDATA[Indica se a consulta foi realizada com sucesso.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="113" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="113" name="access" description="private"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="125" package="braspress">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="120">
+          <description><![CDATA[Cria um objeto de resultado.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="120" name="param" description="Retorno da Braspress." type="\stdClass" variable="$retorno">
+            <type by_reference="false">\stdClass</type>
+          </tag>
+          <tag line="120" name="access" description="public"/>
+        </docblock>
+        <argument line="125">
+          <name>$retorno</name>
+          <default><![CDATA[]]></default>
+          <type>\stdClass</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="150" package="braspress">
+        <name>setTotalFrete</name>
+        <full_name>setTotalFrete</full_name>
+        <docblock line="145">
+          <description><![CDATA[Informa o valor total do frete.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="145" name="param" description="Valor total do frete." type="double" variable="$totalFrete">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="145" name="access" description="private"/>
+        </docblock>
+        <argument line="150">
+          <name>$totalFrete</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="160" package="braspress">
+        <name>setIcms</name>
+        <full_name>setIcms</full_name>
+        <docblock line="155">
+          <description><![CDATA[Informa o percentual de ICMS do frete.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="155" name="param" description="Percentual de ICMS" type="double" variable="$icms">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="155" name="access" description="private"/>
+        </docblock>
+        <argument line="160">
+          <name>$icms</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="170" package="braspress">
+        <name>setValorIcms</name>
+        <full_name>setValorIcms</full_name>
+        <docblock line="165">
+          <description><![CDATA[Informa o valor do ICMS do frete.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="165" name="param" description="Valor do ICMS do frete." type="double" variable="$valorIcms">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="165" name="access" description="private"/>
+        </docblock>
+        <argument line="170">
+          <name>$valorIcms</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="180" package="braspress">
+        <name>setFretePeso</name>
+        <full_name>setFretePeso</full_name>
+        <docblock line="175">
+          <description><![CDATA[Informa o valor do frete por peso.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="175" name="param" description="Valor do frete por peso." type="double" variable="$fretePeso">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="175" name="access" description="private"/>
+        </docblock>
+        <argument line="180">
+          <name>$fretePeso</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="190" package="braspress">
+        <name>setFreteValor</name>
+        <full_name>setFreteValor</full_name>
+        <docblock line="185">
+          <description><![CDATA[Informa o valor do frete por valor.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="185" name="param" description="Valor do frete por valor." type="double" variable="$freteValor">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="185" name="access" description="private"/>
+        </docblock>
+        <argument line="190">
+          <name>$freteValor</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="200" package="braspress">
+        <name>setTaxaSecaoCad</name>
+        <full_name>setTaxaSecaoCad</full_name>
+        <docblock line="195">
+          <description><![CDATA[Informa o valor da taxa da seção cadastro.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="195" name="param" description="Taxa da seção cadastro." type="double" variable="$taxaSecaoCad">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="195" name="access" description="private"/>
+        </docblock>
+        <argument line="200">
+          <name>$taxaSecaoCad</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="210" package="braspress">
+        <name>setTaxaPedagio</name>
+        <full_name>setTaxaPedagio</full_name>
+        <docblock line="205">
+          <description><![CDATA[Informa o valor da taxa de pedágio.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="205" name="param" description="Taxa de pedágio." type="double" variable="$taxaPedagio">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="205" name="access" description="private"/>
+        </docblock>
+        <argument line="210">
+          <name>$taxaPedagio</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="220" package="braspress">
+        <name>setTaxaDespacho</name>
+        <full_name>setTaxaDespacho</full_name>
+        <docblock line="215">
+          <description><![CDATA[Informa o valor da taxa de despacho.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="215" name="param" description="Taxa de despacho." type="double" variable="$taxaDespacho">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="215" name="access" description="private"/>
+        </docblock>
+        <argument line="220">
+          <name>$taxaDespacho</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="230" package="braspress">
+        <name>setTaxaITR</name>
+        <full_name>setTaxaITR</full_name>
+        <docblock line="225">
+          <description><![CDATA[Informa o valor da taxa de ITR.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="225" name="param" description="Taxa de ITR." type="double" variable="$taxaITR">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="225" name="access" description="private"/>
+        </docblock>
+        <argument line="230">
+          <name>$taxaITR</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="240" package="braspress">
+        <name>setTaxaOutros</name>
+        <full_name>setTaxaOutros</full_name>
+        <docblock line="235">
+          <description><![CDATA[Informa o valor das outras taxas.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="235" name="param" description="Outras taxas." type="double" variable="$taxaOutros">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="235" name="access" description="private"/>
+        </docblock>
+        <argument line="240">
+          <name>$taxaOutros</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="250" package="braspress">
+        <name>setTaxaAdeme</name>
+        <full_name>setTaxaAdeme</full_name>
+        <docblock line="245">
+          <description><![CDATA[Informa o valor da taxa de ademe.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="245" name="param" description="Taxa de ademe." type="double" variable="$taxaAdeme">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="245" name="access" description="private"/>
+        </docblock>
+        <argument line="250">
+          <name>$taxaAdeme</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="260" package="braspress">
+        <name>setSubtotal</name>
+        <full_name>setSubtotal</full_name>
+        <docblock line="255">
+          <description><![CDATA[Informa o valor do subtotal do frete.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="255" name="param" description="Valor do subtotal do frete." type="double" variable="$subtotal">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="255" name="access" description="private"/>
+        </docblock>
+        <argument line="260">
+          <name>$subtotal</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="270" package="braspress">
+        <name>setMensagemErro</name>
+        <full_name>setMensagemErro</full_name>
+        <docblock line="265">
+          <description><![CDATA[Informa a mensagem de erro, caso tenha havido erro.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="265" name="param" description="Mensagem de erro, caso tenha havido erro." type="string" variable="$mensagemErro">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="265" name="access" description="private"/>
+        </docblock>
+        <argument line="270">
+          <name>$mensagemErro</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="280" package="braspress">
+        <name>setPrazoEntrega</name>
+        <full_name>setPrazoEntrega</full_name>
+        <docblock line="275">
+          <description><![CDATA[Informa o prazo de entrega do frete.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="275" name="param" description="Prazo de entrega do frete." type="double" variable="$prazoEntrega">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="275" name="access" description="private"/>
+        </docblock>
+        <argument line="280">
+          <name>$prazoEntrega</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="290" package="braspress">
+        <name>setSucesso</name>
+        <full_name>setSucesso</full_name>
+        <docblock line="285">
+          <description><![CDATA[Indica se a consulta foi concluída com sucesso.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="285" name="param" description="Indica se a consulta foi concluída com sucesso." type="boolean" variable="$sucesso">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="285" name="access" description="private"/>
+        </docblock>
+        <argument line="290">
+          <name>$sucesso</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="300" package="braspress">
+        <name>getTotalFrete</name>
+        <full_name>getTotalFrete</full_name>
+        <docblock line="295">
+          <description><![CDATA[Retorna o valor total do frete.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="295" name="return" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="295" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="310" package="braspress">
+        <name>getIcms</name>
+        <full_name>getIcms</full_name>
+        <docblock line="305">
+          <description><![CDATA[Retorna o percentual de ICMS.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="305" name="return" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="305" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="320" package="braspress">
+        <name>getValorIcms</name>
+        <full_name>getValorIcms</full_name>
+        <docblock line="315">
+          <description><![CDATA[Retorna o valor do ICMS.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="315" name="return" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="315" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="330" package="braspress">
+        <name>getFretePeso</name>
+        <full_name>getFretePeso</full_name>
+        <docblock line="325">
+          <description><![CDATA[Retorna o valor do frete por peso.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="325" name="return" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="325" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="340" package="braspress">
+        <name>getFreteValor</name>
+        <full_name>getFreteValor</full_name>
+        <docblock line="335">
+          <description><![CDATA[Retorna o valor do frete por valor.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="335" name="return" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="335" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="350" package="braspress">
+        <name>getTaxaSecaoCad</name>
+        <full_name>getTaxaSecaoCad</full_name>
+        <docblock line="345">
+          <description><![CDATA[Retorna o valor da taxa de seção cadastro.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="345" name="return" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="345" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="360" package="braspress">
+        <name>getTaxaPedagio</name>
+        <full_name>getTaxaPedagio</full_name>
+        <docblock line="355">
+          <description><![CDATA[Retorna o valor da taxa de pedágio.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="355" name="return" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="355" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="370" package="braspress">
+        <name>getTaxaDespacho</name>
+        <full_name>getTaxaDespacho</full_name>
+        <docblock line="365">
+          <description><![CDATA[Retorna o valor da taxa de despacho.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="365" name="return" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="365" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="380" package="braspress">
+        <name>getTaxaITR</name>
+        <full_name>getTaxaITR</full_name>
+        <docblock line="375">
+          <description><![CDATA[Retorna o valor da taxa de ITR.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="375" name="return" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="375" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="390" package="braspress">
+        <name>getTaxaOutros</name>
+        <full_name>getTaxaOutros</full_name>
+        <docblock line="385">
+          <description><![CDATA[Retorna o valor das outras taxas.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="385" name="return" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="385" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="400" package="braspress">
+        <name>getTaxaAdeme</name>
+        <full_name>getTaxaAdeme</full_name>
+        <docblock line="395">
+          <description><![CDATA[Retorna o valor da taxa de ademe.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="395" name="return" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="395" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="410" package="braspress">
+        <name>getSubtotal</name>
+        <full_name>getSubtotal</full_name>
+        <docblock line="405">
+          <description><![CDATA[Retorna o valor do subtotal do frete.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="405" name="return" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="405" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="420" package="braspress">
+        <name>getMensagemErro</name>
+        <full_name>getMensagemErro</full_name>
+        <docblock line="415">
+          <description><![CDATA[Retorna a mensagem de erro, caso tenha havido erro.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="415" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="415" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="430" package="braspress">
+        <name>getPrazoEntrega</name>
+        <full_name>getPrazoEntrega</full_name>
+        <docblock line="425">
+          <description><![CDATA[Retorna o prazo de entrega do frete.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="425" name="return" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="425" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="440" package="braspress">
+        <name>getSucesso</name>
+        <full_name>getSucesso</full_name>
+        <docblock line="435">
+          <description><![CDATA[Indica se a consulta foi concluída com sucesso.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="435" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="435" name="access" description="public"/>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file classes/BraspressCalculaFreteResultado.php</error>
+    </parse_markers>
+  </file>
+  <file path="classes/BraspressCep.php" hash="dcbef15dd4ab8be2289b59cfc711f3c2" package="Default">
+    <class final="false" abstract="false" namespace="global" line="11" package="braspress">
+      <extends>\Braspress</extends>
+      <name>BraspressCep</name>
+      <full_name>\BraspressCep</full_name>
+      <docblock line="3">
+        <description><![CDATA[Classe para realizar a consulta de CEP através da Braspress.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="3" name="author" description="Ivan Wilhelm &lt;ivan.whm@me.com&gt;"/>
+        <tag line="3" name="package" description="braspress"/>
+        <tag line="3" name="version" description="1.0"/>
+        <tag line="3" name="final" description=""/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="19" namespace="global" package="Default">
+        <name>$cep</name>
+        <default><![CDATA[]]></default>
+        <docblock line="14">
+          <description><![CDATA[Contém o CEP para a consulta de endereço.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="14" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="14" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="26" namespace="global" package="Default">
+        <name>$resultado</name>
+        <default><![CDATA[]]></default>
+        <docblock line="21">
+          <description><![CDATA[Contém o resultado da consulta quando processada com sucesso.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="21" name="var" description="" type="\BraspressCepResultado">
+            <type by_reference="false">\BraspressCepResultado</type>
+          </tag>
+          <tag line="21" name="access" description="private"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="34" package="braspress">
+        <name>setCep</name>
+        <full_name>setCep</full_name>
+        <docblock line="28">
+          <description><![CDATA[Atribui o CEP para a consulta de endereço.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="param" description="CEP para a consulta de endereço." type="double" variable="$cep">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="28" name="access" description="public"/>
+          <tag line="28" name="throws" description="" type="\Exception">
+            <type by_reference="false">\Exception</type>
+          </tag>
+        </docblock>
+        <argument line="34">
+          <name>$cep</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="48" package="braspress">
+        <name>processaConsulta</name>
+        <full_name>processaConsulta</full_name>
+        <docblock line="42">
+          <description><![CDATA[Processa a consulta e retorna VERDADEIRO se foi concluída com sucesso.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="42" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="42" name="access" description="public"/>
+          <tag line="42" name="throws" description="" type="\Exception">
+            <type by_reference="false">\Exception</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="80" package="braspress">
+        <name>getResultado</name>
+        <full_name>getResultado</full_name>
+        <docblock line="75">
+          <description><![CDATA[Retorna o resultado da consulta.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="75" name="return" description="" type="\BraspressCepResultado">
+            <type by_reference="false">\BraspressCepResultado</type>
+          </tag>
+          <tag line="75" name="access" description="public"/>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file classes/BraspressCep.php</error>
+    </parse_markers>
+  </file>
+  <file path="classes/BraspressCepResultado.php" hash="436505d747ac71bf79f4fdd38477139a" package="Default">
+    <class final="false" abstract="false" namespace="global" line="12" package="braspress">
+      <extends/>
+      <name>BraspressCepResultado</name>
+      <full_name>\BraspressCepResultado</full_name>
+      <docblock line="3">
+        <description><![CDATA[Classe que irá conter o resultado de uma consulta remota de CEP através do
+webservice da Braspress.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="3" name="author" description="Ivan Wilhelm &lt;ivan.whm@me.com&gt;"/>
+        <tag line="3" name="package" description="braspress"/>
+        <tag line="3" name="version" description="1.0"/>
+        <tag line="3" name="final" description=""/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="20" namespace="global" package="Default">
+        <name>$logradouro</name>
+        <default><![CDATA[]]></default>
+        <docblock line="15">
+          <description><![CDATA[Contém o logradouro do endereço.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="15" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="15" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="27" namespace="global" package="Default">
+        <name>$cidade</name>
+        <default><![CDATA[]]></default>
+        <docblock line="22">
+          <description><![CDATA[Contém a cidade do endereço.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="22" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="22" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="34" namespace="global" package="Default">
+        <name>$uf</name>
+        <default><![CDATA[]]></default>
+        <docblock line="29">
+          <description><![CDATA[Contém a unidade federativa do endereço.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="29" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="29" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="41" namespace="global" package="Default">
+        <name>$bairro</name>
+        <default><![CDATA[]]></default>
+        <docblock line="36">
+          <description><![CDATA[Contém o bairro do endereço.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="36" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="36" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="48" namespace="global" package="Default">
+        <name>$mensagemErro</name>
+        <default><![CDATA[]]></default>
+        <docblock line="43">
+          <description><![CDATA[Contém a mensagem de erro, caso tenha havido algum erro.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="43" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="43" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="55" namespace="global" package="Default">
+        <name>$sucesso</name>
+        <default><![CDATA[]]></default>
+        <docblock line="50">
+          <description><![CDATA[Indica se a consulta retornou com sucesso.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="50" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="50" name="access" description="private"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="62" package="braspress">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="57">
+          <description><![CDATA[Cria um objeto de resultado.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="57" name="param" description="Retorno da Braspress." type="\stdClass" variable="$retorno">
+            <type by_reference="false">\stdClass</type>
+          </tag>
+          <tag line="57" name="access" description="public"/>
+        </docblock>
+        <argument line="62">
+          <name>$retorno</name>
+          <default><![CDATA[]]></default>
+          <type>\stdClass</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="78" package="braspress">
+        <name>setLogradouro</name>
+        <full_name>setLogradouro</full_name>
+        <docblock line="73">
+          <description><![CDATA[Informa o logradouro do endereço.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="73" name="param" description="Logradouro do endereço." type="string" variable="$logradouro">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="73" name="access" description="private"/>
+        </docblock>
+        <argument line="78">
+          <name>$logradouro</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="88" package="braspress">
+        <name>setCidade</name>
+        <full_name>setCidade</full_name>
+        <docblock line="83">
+          <description><![CDATA[Informa a cidade do endereço.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="83" name="param" description="Cidade do endereço." type="string" variable="$cidade">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="83" name="access" description="private"/>
+        </docblock>
+        <argument line="88">
+          <name>$cidade</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="98" package="braspress">
+        <name>setUf</name>
+        <full_name>setUf</full_name>
+        <docblock line="93">
+          <description><![CDATA[Informa a unidade federativa do endereço.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="93" name="param" description="Unidade federativa do endereço." type="string" variable="$uf">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="93" name="access" description="private"/>
+        </docblock>
+        <argument line="98">
+          <name>$uf</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="108" package="braspress">
+        <name>setBairro</name>
+        <full_name>setBairro</full_name>
+        <docblock line="103">
+          <description><![CDATA[Informa o bairro do endereço.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="103" name="param" description="Bairro do endereço." type="string" variable="$bairro">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="103" name="access" description="private"/>
+        </docblock>
+        <argument line="108">
+          <name>$bairro</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="118" package="braspress">
+        <name>setMensagemErro</name>
+        <full_name>setMensagemErro</full_name>
+        <docblock line="113">
+          <description><![CDATA[Informa a mensagem de erro, caso tenha havido.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="113" name="param" description="Mensagem de erro, caso tenha havido." type="string" variable="$mensagemErro">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="113" name="access" description="private"/>
+        </docblock>
+        <argument line="118">
+          <name>$mensagemErro</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="128" package="braspress">
+        <name>setSucesso</name>
+        <full_name>setSucesso</full_name>
+        <docblock line="123">
+          <description><![CDATA[Indica se a consulta retornou com sucesso.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="123" name="param" description="A consulta retornou com sucesso." type="boolean" variable="$sucesso">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="123" name="access" description="private"/>
+        </docblock>
+        <argument line="128">
+          <name>$sucesso</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="138" package="braspress">
+        <name>getLogradouro</name>
+        <full_name>getLogradouro</full_name>
+        <docblock line="133">
+          <description><![CDATA[Retorna o logradouro do endereço.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="133" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="133" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="148" package="braspress">
+        <name>getCidade</name>
+        <full_name>getCidade</full_name>
+        <docblock line="143">
+          <description><![CDATA[Retorna a cidade do endereço.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="143" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="143" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="158" package="braspress">
+        <name>getUf</name>
+        <full_name>getUf</full_name>
+        <docblock line="153">
+          <description><![CDATA[Retorna a unidade federativa do endereço.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="153" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="153" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="168" package="braspress">
+        <name>getBairro</name>
+        <full_name>getBairro</full_name>
+        <docblock line="163">
+          <description><![CDATA[Retorna o bairro do endereço.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="163" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="163" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="178" package="braspress">
+        <name>getMensagemErro</name>
+        <full_name>getMensagemErro</full_name>
+        <docblock line="173">
+          <description><![CDATA[Retorna a mensagem de erro, caso tenha havido.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="173" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="173" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="188" package="braspress">
+        <name>getSucesso</name>
+        <full_name>getSucesso</full_name>
+        <docblock line="183">
+          <description><![CDATA[Retorna se a consulta foi realizada com sucesso.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="183" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="183" name="access" description="public"/>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file classes/BraspressCepResultado.php</error>
+    </parse_markers>
+  </file>
+  <file path="classes/BraspressPrazoEntrega.php" hash="069168d30e5ec3da3113ce135aacbcae" package="Default">
+    <class final="false" abstract="false" namespace="global" line="11" package="braspress">
+      <extends>\Braspress</extends>
+      <name>BraspressPrazoEntrega</name>
+      <full_name>\BraspressPrazoEntrega</full_name>
+      <docblock line="3">
+        <description><![CDATA[Classe para realizar a consulta de prazo de entrega através de dois ceps.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="3" name="author" description="Ivan Wilhelm &lt;ivan.whm@me.com&gt;"/>
+        <tag line="3" name="package" description="braspress"/>
+        <tag line="3" name="version" description="1.0"/>
+        <tag line="3" name="final" description=""/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="19" namespace="global" package="Default">
+        <name>$cepOrigem</name>
+        <default><![CDATA[]]></default>
+        <docblock line="14">
+          <description><![CDATA[Contém o CEP de origem.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="14" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="14" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="26" namespace="global" package="Default">
+        <name>$cepDestino</name>
+        <default><![CDATA[]]></default>
+        <docblock line="21">
+          <description><![CDATA[Contém o CEP de destino.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="21" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="21" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="33" namespace="global" package="Default">
+        <name>$resultado</name>
+        <default><![CDATA[]]></default>
+        <docblock line="28">
+          <description><![CDATA[Contém o resultado da consulta.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="var" description="" type="\BraspressPrazoEntregaResultado">
+            <type by_reference="false">\BraspressPrazoEntregaResultado</type>
+          </tag>
+          <tag line="28" name="access" description="private"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="41" package="braspress">
+        <name>setCepOrigem</name>
+        <full_name>setCepOrigem</full_name>
+        <docblock line="35">
+          <description><![CDATA[Informa o CEP de origem para a pesquisa.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="35" name="param" description="CEP de origem." type="double" variable="$cepOrigem">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="35" name="access" description="public"/>
+          <tag line="35" name="throws" description="" type="\Exception">
+            <type by_reference="false">\Exception</type>
+          </tag>
+        </docblock>
+        <argument line="41">
+          <name>$cepOrigem</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="55" package="braspress">
+        <name>setCepDestino</name>
+        <full_name>setCepDestino</full_name>
+        <docblock line="49">
+          <description><![CDATA[Informa o CEP de destino para a pesquisa.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="49" name="param" description="CEP de destino." type="double" variable="$cepDestino">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="49" name="access" description="public"/>
+          <tag line="49" name="throws" description="" type="\Exception">
+            <type by_reference="false">\Exception</type>
+          </tag>
+        </docblock>
+        <argument line="55">
+          <name>$cepDestino</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="68" package="braspress">
+        <name>processaConsulta</name>
+        <full_name>processaConsulta</full_name>
+        <docblock line="63">
+          <description><![CDATA[Processa a consulta e retorna VERDADEIRO se foi concluída com sucesso.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="63" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="63" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="108" package="braspress">
+        <name>getResultado</name>
+        <full_name>getResultado</full_name>
+        <docblock line="103">
+          <description><![CDATA[Retorna o resultado da consulta.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="103" name="return" description="" type="\BraspressPrazoEntregaResultado">
+            <type by_reference="false">\BraspressPrazoEntregaResultado</type>
+          </tag>
+          <tag line="103" name="access" description="public"/>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file classes/BraspressPrazoEntrega.php</error>
+    </parse_markers>
+  </file>
+  <file path="classes/BraspressPrazoEntregaResultado.php" hash="cd61163df55f7e5aeb889ae9003a2c0f" package="Default">
+    <class final="false" abstract="false" namespace="global" line="11" package="braspress">
+      <extends/>
+      <name>BraspressPrazoEntregaResultado</name>
+      <full_name>\BraspressPrazoEntregaResultado</full_name>
+      <docblock line="3">
+        <description><![CDATA[Classe que contém o retorno de uma consulta de prazos da Braspress.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="3" name="author" description="Ivan Wilhelm &lt;ivan.whm@me.com&gt;"/>
+        <tag line="3" name="package" description="braspress"/>
+        <tag line="3" name="version" description="1.0"/>
+        <tag line="3" name="final" description=""/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="19" namespace="global" package="Default">
+        <name>$prazo</name>
+        <default><![CDATA[]]></default>
+        <docblock line="14">
+          <description><![CDATA[Contém o prazo de entrega.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="14" name="var" description="" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="14" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="26" namespace="global" package="Default">
+        <name>$sucesso</name>
+        <default><![CDATA[]]></default>
+        <docblock line="21">
+          <description><![CDATA[Indica se o retorno foi efetuado com sucesso.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="21" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="21" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="33" namespace="global" package="Default">
+        <name>$mensagemErro</name>
+        <default><![CDATA[]]></default>
+        <docblock line="28">
+          <description><![CDATA[Contém a mensagem de erro.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="28" name="access" description="private"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="40" package="braspress">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="35">
+          <description><![CDATA[Cria um objeto de retorno.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="35" name="param" description="Retorno da consulta" type="array" variable="$retorno">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="35" name="access" description="public"/>
+        </docblock>
+        <argument line="40">
+          <name>$retorno</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="52" package="braspress">
+        <name>setPrazo</name>
+        <full_name>setPrazo</full_name>
+        <docblock line="47">
+          <description><![CDATA[Indica o prazo de entrega da consulta.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="47" name="param" description="Prazo de entrega." type="integer" variable="$prazo">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="47" name="access" description="private"/>
+        </docblock>
+        <argument line="52">
+          <name>$prazo</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="62" package="braspress">
+        <name>setSucesso</name>
+        <full_name>setSucesso</full_name>
+        <docblock line="57">
+          <description><![CDATA[Indica se a consulta foi realizada com sucesso.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="57" name="param" description="Indica se houve sucesso." type="boolean" variable="$sucesso">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="57" name="access" description="private"/>
+        </docblock>
+        <argument line="62">
+          <name>$sucesso</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="72" package="braspress">
+        <name>setMensagemErro</name>
+        <full_name>setMensagemErro</full_name>
+        <docblock line="67">
+          <description><![CDATA[Indica a mensagem de erro.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="67" name="param" description="Mensagem de erro." type="string" variable="$mensagemErro">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="67" name="access" description="private"/>
+        </docblock>
+        <argument line="72">
+          <name>$mensagemErro</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="82" package="braspress">
+        <name>getPrazo</name>
+        <full_name>getPrazo</full_name>
+        <docblock line="77">
+          <description><![CDATA[Retorna o prazo de entrega.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="77" name="return" description="" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="77" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="92" package="braspress">
+        <name>getSucesso</name>
+        <full_name>getSucesso</full_name>
+        <docblock line="87">
+          <description><![CDATA[Indica o retorno da consulta.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="87" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="87" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="102" package="braspress">
+        <name>getMensagemErro</name>
+        <full_name>getMensagemErro</full_name>
+        <docblock line="97">
+          <description><![CDATA[Retorna a mensagem de erro, caso tenha havido.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="97" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="97" name="access" description="public"/>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file classes/BraspressPrazoEntregaResultado.php</error>
+    </parse_markers>
+  </file>
+  <file path="classes/BraspressValorFreteTotal.php" hash="03dcd6672c89452bf4f3d70b0af05c40" package="Default">
+    <class final="false" abstract="false" namespace="global" line="11" package="braspress">
+      <extends>\Braspress</extends>
+      <name>BraspressValorFreteTotal</name>
+      <full_name>\BraspressValorFreteTotal</full_name>
+      <docblock line="3">
+        <description><![CDATA[Classe para realizar o cálculo de frete e retornando apenas o valor total do frete.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="3" name="author" description="Ivan Wilhelm &lt;ivan.whm@me.com&gt;"/>
+        <tag line="3" name="package" description="braspress"/>
+        <tag line="3" name="version" description="1.0"/>
+        <tag line="3" name="final" description=""/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="20" namespace="global" package="Default">
+        <name>$idOrigem</name>
+        <default><![CDATA[]]></default>
+        <docblock line="14">
+          <description><![CDATA[Contém o ID de origem.]]></description>
+          <long-description><![CDATA[<p>Este ID é informado pela Braspress no ato da assinatura do contrato.</p>]]></long-description>
+          <tag line="14" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="14" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="27" namespace="global" package="Default">
+        <name>$cepOrigem</name>
+        <default><![CDATA[]]></default>
+        <docblock line="22">
+          <description><![CDATA[Contém o CEP de origem.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="22" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="22" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="34" namespace="global" package="Default">
+        <name>$cepDestino</name>
+        <default><![CDATA[]]></default>
+        <docblock line="29">
+          <description><![CDATA[Contém o CEP de destino.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="29" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="29" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="41" namespace="global" package="Default">
+        <name>$tipoFrete</name>
+        <default><![CDATA[]]></default>
+        <docblock line="36">
+          <description><![CDATA[Contém o tipo de frete;]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="36" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="36" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="48" namespace="global" package="Default">
+        <name>$documentoDestino</name>
+        <default><![CDATA[]]></default>
+        <docblock line="43">
+          <description><![CDATA[Contém o CPF/CNPJ de destino.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="43" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="43" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="55" namespace="global" package="Default">
+        <name>$peso</name>
+        <default><![CDATA[]]></default>
+        <docblock line="50">
+          <description><![CDATA[Contém o peso em gramas da mercadoria.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="50" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="50" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="62" namespace="global" package="Default">
+        <name>$valorNF</name>
+        <default><![CDATA[]]></default>
+        <docblock line="57">
+          <description><![CDATA[Contém o valor da NF.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="57" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="57" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="69" namespace="global" package="Default">
+        <name>$volume</name>
+        <default><![CDATA[]]></default>
+        <docblock line="64">
+          <description><![CDATA[Contém a quantidade de volumes do envio.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="64" name="var" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="64" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="76" namespace="global" package="Default">
+        <name>$resultado</name>
+        <default><![CDATA[]]></default>
+        <docblock line="71">
+          <description><![CDATA[Contém o resultado da consulta.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="71" name="var" description="" type="\BraspressValorFreteTotalResultado">
+            <type by_reference="false">\BraspressValorFreteTotalResultado</type>
+          </tag>
+          <tag line="71" name="access" description="private"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="84" package="braspress">
+        <name>setIdOrigem</name>
+        <full_name>setIdOrigem</full_name>
+        <docblock line="78">
+          <description><![CDATA[Informa o ID da origem.]]></description>
+          <long-description><![CDATA[<p>Este ID é informado pela Braspress no ato da assinatura do contrato.</p>]]></long-description>
+          <tag line="78" name="param" description="ID de origem." type="double" variable="$idOrigem">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="78" name="access" description="public"/>
+        </docblock>
+        <argument line="84">
+          <name>$idOrigem</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="95" package="braspress">
+        <name>setCepOrigem</name>
+        <full_name>setCepOrigem</full_name>
+        <docblock line="89">
+          <description><![CDATA[Informa o CEP de origem para a pesquisa.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="89" name="param" description="CEP de origem." type="double" variable="$cepOrigem">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="89" name="access" description="public"/>
+          <tag line="89" name="throws" description="" type="\Exception">
+            <type by_reference="false">\Exception</type>
+          </tag>
+        </docblock>
+        <argument line="95">
+          <name>$cepOrigem</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="109" package="braspress">
+        <name>setCepDestino</name>
+        <full_name>setCepDestino</full_name>
+        <docblock line="103">
+          <description><![CDATA[Informa o CEP de destino para a pesquisa.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="103" name="param" description="CEP de destino." type="double" variable="$cepDestino">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="103" name="access" description="public"/>
+          <tag line="103" name="throws" description="" type="\Exception">
+            <type by_reference="false">\Exception</type>
+          </tag>
+        </docblock>
+        <argument line="109">
+          <name>$cepDestino</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="122" package="braspress">
+        <name>setTipoFrete</name>
+        <full_name>setTipoFrete</full_name>
+        <docblock line="117">
+          <description><![CDATA[Informa o tipo de frete.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="117" name="param" description="Tipo de frete." type="string" variable="$tipoFrete">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="117" name="access" description="public"/>
+        </docblock>
+        <argument line="122">
+          <name>$tipoFrete</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="135" package="braspress">
+        <name>setDocumentoDestino</name>
+        <full_name>setDocumentoDestino</full_name>
+        <docblock line="130">
+          <description><![CDATA[Informa o documento CPF/CNPJ do destinatário da mercadoria.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="130" name="param" description="CPF/CNPJ do destinatário da mercadoria." type="double" variable="$documentoDestino">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="130" name="access" description="public"/>
+        </docblock>
+        <argument line="135">
+          <name>$documentoDestino</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="145" package="braspress">
+        <name>setPeso</name>
+        <full_name>setPeso</full_name>
+        <docblock line="140">
+          <description><![CDATA[Informa o peso em gramas da mercadoria.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="140" name="param" description="Peso em gramas." type="double" variable="$peso">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="140" name="access" description="public"/>
+        </docblock>
+        <argument line="145">
+          <name>$peso</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="155" package="braspress">
+        <name>setValorNF</name>
+        <full_name>setValorNF</full_name>
+        <docblock line="150">
+          <description><![CDATA[Informa o valor da NF da mercadoria.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="150" name="param" description="Valor da NF." type="double" variable="$valorNF">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="150" name="access" description="public"/>
+        </docblock>
+        <argument line="155">
+          <name>$valorNF</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="165" package="braspress">
+        <name>setVolume</name>
+        <full_name>setVolume</full_name>
+        <docblock line="160">
+          <description><![CDATA[Informa o volume da mercadoria.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="160" name="param" description="Volume da mercadoria." type="double" variable="$volume">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="160" name="access" description="public"/>
+        </docblock>
+        <argument line="165">
+          <name>$volume</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="175" package="braspress">
+        <name>processaConsulta</name>
+        <full_name>processaConsulta</full_name>
+        <docblock line="170">
+          <description><![CDATA[Processa a consulta e retorna VERDADEIRO se foi concluída com sucesso.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="170" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="170" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="215" package="braspress">
+        <name>getResultado</name>
+        <full_name>getResultado</full_name>
+        <docblock line="210">
+          <description><![CDATA[Retorna o resultado da consulta.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="210" name="return" description="" type="\BraspressValorFreteTotalResultado">
+            <type by_reference="false">\BraspressValorFreteTotalResultado</type>
+          </tag>
+          <tag line="210" name="access" description="public"/>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file classes/BraspressValorFreteTotal.php</error>
+    </parse_markers>
+  </file>
+  <file path="classes/BraspressValorFreteTotalResultado.php" hash="9087970a115149d73418a5cf7d7a719d" package="Default">
+    <class final="false" abstract="false" namespace="global" line="11" package="braspress">
+      <extends/>
+      <name>BraspressValorFreteTotalResultado</name>
+      <full_name>\BraspressValorFreteTotalResultado</full_name>
+      <docblock line="3">
+        <description><![CDATA[Classe que contém o retorno de uma consulta de valor de frete da Braspress.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="3" name="author" description="Ivan Wilhelm &lt;ivan.whm@me.com&gt;"/>
+        <tag line="3" name="package" description="braspress"/>
+        <tag line="3" name="version" description="1.0"/>
+        <tag line="3" name="final" description=""/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="19" namespace="global" package="Default">
+        <name>$valorFrete</name>
+        <default><![CDATA[]]></default>
+        <docblock line="14">
+          <description><![CDATA[Contém o valor do frete]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="14" name="var" description="" type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="14" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="26" namespace="global" package="Default">
+        <name>$sucesso</name>
+        <default><![CDATA[]]></default>
+        <docblock line="21">
+          <description><![CDATA[Indica se o retorno foi efetuado com sucesso.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="21" name="var" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="21" name="access" description="private"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="33" namespace="global" package="Default">
+        <name>$mensagemErro</name>
+        <default><![CDATA[]]></default>
+        <docblock line="28">
+          <description><![CDATA[Contém a mensagem de erro.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="28" name="access" description="private"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="40" package="braspress">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="35">
+          <description><![CDATA[Cria um objeto de retorno.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="35" name="param" description="Retorno da consulta" type="array" variable="$retorno">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="35" name="access" description="public"/>
+        </docblock>
+        <argument line="40">
+          <name>$retorno</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="52" package="braspress">
+        <name>setValorFrete</name>
+        <full_name>setValorFrete</full_name>
+        <docblock line="47">
+          <description><![CDATA[Indica o valor do frete.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="47" name="param" description="Valor do frete." type="double" variable="$valorFrete">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="47" name="access" description="private"/>
+        </docblock>
+        <argument line="52">
+          <name>$valorFrete</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="62" package="braspress">
+        <name>setSucesso</name>
+        <full_name>setSucesso</full_name>
+        <docblock line="57">
+          <description><![CDATA[Indica se a consulta foi realizada com sucesso.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="57" name="param" description="Indica se houve sucesso." type="boolean" variable="$sucesso">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="57" name="access" description="private"/>
+        </docblock>
+        <argument line="62">
+          <name>$sucesso</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="72" package="braspress">
+        <name>setMensagemErro</name>
+        <full_name>setMensagemErro</full_name>
+        <docblock line="67">
+          <description><![CDATA[Indica a mensagem de erro.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="67" name="param" description="Mensagem de erro." type="string" variable="$mensagemErro">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="67" name="access" description="private"/>
+        </docblock>
+        <argument line="72">
+          <name>$mensagemErro</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="82" package="braspress">
+        <name>getValorFrete</name>
+        <full_name>getValorFrete</full_name>
+        <docblock line="77">
+          <description><![CDATA[Retorna o valor total do frete.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="77" name="return" description="" type="double">
+            <type by_reference="false">double</type>
+          </tag>
+          <tag line="77" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="92" package="braspress">
+        <name>getSucesso</name>
+        <full_name>getSucesso</full_name>
+        <docblock line="87">
+          <description><![CDATA[Indica o retorno da consulta.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="87" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="87" name="access" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="102" package="braspress">
+        <name>getMensagemErro</name>
+        <full_name>getMensagemErro</full_name>
+        <docblock line="97">
+          <description><![CDATA[Retorna a mensagem de erro, caso tenha havido.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="97" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="97" name="access" description="public"/>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file classes/BraspressValorFreteTotalResultado.php</error>
+    </parse_markers>
+  </file>
+  <file path="exemplos/busca_cep.php" hash="fd2748f71d671b8ad92f80da0674de0b" package="Default">
+    <docblock line="3">
+      <description><![CDATA[Contém um exemplo de utilização da classe de consulta de CEP da Braspress.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Ivan Wilhelm &lt;ivan.whm@me.com&gt;"/>
+      <tag line="3" name="version" description="1.0"/>
+    </docblock>
+    <include line="13" type="Require" package="Default">
+      <name>../classes/Braspress.php</name>
+    </include>
+    <include line="14" type="Require" package="Default">
+      <name>../classes/BraspressCep.php</name>
+    </include>
+    <include line="15" type="Require" package="Default">
+      <name>../classes/BraspressCepResultado.php</name>
+    </include>
+  </file>
+  <file path="exemplos/calcula_frete.php" hash="e7e310f8ab4a128fe1525520a6f44a32" package="Default">
+    <docblock line="3">
+      <description><![CDATA[Contém um exemplo de utilização da classe de calculo total de frete da Braspress.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Ivan Wilhelm &lt;ivan.whm@me.com&gt;"/>
+      <tag line="3" name="version" description="1.0"/>
+    </docblock>
+    <include line="13" type="Require" package="Default">
+      <name>../classes/Braspress.php</name>
+    </include>
+    <include line="14" type="Require" package="Default">
+      <name>../classes/BraspressCalculaFrete.php</name>
+    </include>
+    <include line="15" type="Require" package="Default">
+      <name>../classes/BraspressCalculaFreteResultado.php</name>
+    </include>
+  </file>
+  <file path="exemplos/consulta_prazo_entrega.php" hash="462d7081b0cd1f14e6c065ae65735c57" package="Default">
+    <docblock line="3">
+      <description><![CDATA[Contém um exemplo de utilização da classe de consulta de CEP da Braspress.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Ivan Wilhelm &lt;ivan.whm@me.com&gt;"/>
+      <tag line="3" name="version" description="1.0"/>
+    </docblock>
+    <include line="13" type="Require" package="Default">
+      <name>../classes/Braspress.php</name>
+    </include>
+    <include line="14" type="Require" package="Default">
+      <name>../classes/BraspressPrazoEntrega.php</name>
+    </include>
+    <include line="15" type="Require" package="Default">
+      <name>../classes/BraspressPrazoEntregaResultado.php</name>
+    </include>
+  </file>
+  <file path="exemplos/consulta_valor_frete.php" hash="b7874d326d9986166723e0b52ecff58f" package="Default">
+    <docblock line="3">
+      <description><![CDATA[Contém um exemplo de utilização da classe de valor total do frete da Braspress.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Ivan Wilhelm &lt;ivan.whm@me.com&gt;"/>
+      <tag line="3" name="version" description="1.0"/>
+    </docblock>
+    <include line="13" type="Require" package="Default">
+      <name>../classes/Braspress.php</name>
+    </include>
+    <include line="14" type="Require" package="Default">
+      <name>../classes/BraspressValorFreteTotal.php</name>
+    </include>
+    <include line="15" type="Require" package="Default">
+      <name>../classes/BraspressValorFreteTotalResultado.php</name>
+    </include>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="braspress" full_name="braspress"/>
+  <namespace name="global" full_name="global"/>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>

@@ -4,6 +4,7 @@
    * Classe para realizar a consulta de CEP através da Braspress.
    * 
    * @author Ivan Wilhelm <ivan.whm@me.com>
+   * @package braspress
    * @version 1.0
    * @final
    */
@@ -13,18 +14,21 @@
     /**
      * Contém o CEP para a consulta de endereço.
      * @var double
+     * @access private
      */
     private $cep;
 
     /**
      * Contém o resultado da consulta quando processada com sucesso.
      * @var BraspressCepResultado 
+     * @access private
      */
     private $resultado;
 
     /**
      * Atribui o CEP para a consulta de endereço.
      * @param double $cep CEP para a consulta de endereço.
+     * @access public
      * @throws Exception
      */
     public function setCep($cep)
@@ -38,6 +42,7 @@
     /**
      * Processa a consulta e retorna VERDADEIRO se foi concluída com sucesso.
      * @return boolean
+     * @access public
      * @throws Exception 
      */
     public function processaConsulta()
@@ -70,6 +75,7 @@
     /**
      * Retorna o resultado da consulta.
      * @return BraspressCepResultado
+     * @access public
      */
     public function getResultado()
     {

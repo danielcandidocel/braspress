@@ -4,6 +4,7 @@
    * Classe para realizar o cálculo de frete monstrando todos os detalhes do cálculo.
    * 
    * @author Ivan Wilhelm <ivan.whm@me.com>
+   * @package braspress
    * @version 1.0
    * @final
    */
@@ -14,54 +15,63 @@
      * Contém o ID de origem.
      * Este ID é informado pela Braspress no ato da assinatura do contrato.
      * @var double
+     * @access private
      */
     private $idOrigem;
 
     /**
      * Contém o CEP de origem.
      * @var double 
+     * @access private
      */
     private $cepOrigem;
 
     /**
      * Contém o CEP de destino.
      * @var double
+     * @access private
      */
     private $cepDestino;
 
     /**
      * Contém o tipo de frete;
      * @var string
+     * @access private
      */
     private $tipoFrete;
 
     /**
      * Contém o CPF/CNPJ de destino.
      * @var double 
+     * @access private
      */
     private $documentoDestino;
 
     /**
      * Contém o peso em gramas da mercadoria.
      * @var double
+     * @access private
      */
     private $peso;
 
     /**
      * Contém o valor da NF.
      * @var double
+     * @access private
      */
     private $valorNF;
 
     /**
      * Contém a quantidade de volumes do envio.
      * @var double
+     * @access private
      */
     private $volume;
 
     /**
      * Contém o resultado da consulta
      * @var BraspressCalculaFreteResultado 
+     * @access private
      */
     private $resultado;
 
@@ -69,6 +79,7 @@
      * Informa o ID da origem.
      * Este ID é informado pela Braspress no ato da assinatura do contrato.
      * @param double $idOrigem ID de origem.
+     * @access public
      */
     public function setIdOrigem($idOrigem)
     {
@@ -78,6 +89,7 @@
     /**
      * Informa o CEP de origem para a pesquisa.
      * @param double $cepOrigem CEP de origem.
+     * @access public
      * @throws Exception
      */
     public function setCepOrigem($cepOrigem)
@@ -91,6 +103,7 @@
     /**
      * Informa o CEP de destino para a pesquisa.
      * @param double $cepDestino CEP de destino.
+     * @access public
      * @throws Exception
      */
     public function setCepDestino($cepDestino)
@@ -104,6 +117,7 @@
     /**
      * Informa o tipo de frete.
      * @param string $tipoFrete Tipo de frete.
+     * @access public
      */
     public function setTipoFrete($tipoFrete)
     {
@@ -116,6 +130,7 @@
     /**
      * Informa o documento CPF/CNPJ do destinatário da mercadoria.
      * @param double $documentoDestino CPF/CNPJ do destinatário da mercadoria.
+     * @access public
      */
     public function setDocumentoDestino($documentoDestino)
     {
@@ -125,6 +140,7 @@
     /**
      * Informa o peso em gramas da mercadoria.
      * @param double $peso Peso em gramas.
+     * @access public
      */
     public function setPeso($peso)
     {
@@ -134,6 +150,7 @@
     /**
      * Informa o valor da NF da mercadoria.
      * @param double $valorNF Valor da NF.
+     * @access public
      */
     public function setValorNF($valorNF)
     {
@@ -143,6 +160,7 @@
     /**
      * Informa o volume da mercadoria.
      * @param double $volume Volume da mercadoria.
+     * @access public
      */
     public function setVolume($volume)
     {
@@ -152,6 +170,7 @@
     /**
      * Processa a consulta e retorna VERDADEIRO se foi concluída com sucesso.
      * @return boolean
+     * @access public
      * @throws Exception 
      */
     public function processaConsulta()
@@ -184,6 +203,7 @@
     /**
      * Retorna o resultado da consulta.
      * @return BraspressCalculaFreteResultado
+     * @access public
      */
     public function getResultado()
     {

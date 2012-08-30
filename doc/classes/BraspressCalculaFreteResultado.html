@@ -1,0 +1,806 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Braspress » \BraspressCalculaFreteResultado</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Braspress</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/braspress.html"><i class="icon-folder-open"></i> braspress</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">9</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#__construct" title="__construct :: Cria um objeto de resultado."><span class="description">Cria um objeto de resultado.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#getFretePeso" title="getFretePeso :: Retorna o valor do frete por peso."><span class="description">Retorna o valor do frete por peso.</span><pre>getFretePeso()</pre></a></li>
+<li class="method public "><a href="#getFreteValor" title="getFreteValor :: Retorna o valor do frete por valor."><span class="description">Retorna o valor do frete por valor.</span><pre>getFreteValor()</pre></a></li>
+<li class="method public "><a href="#getIcms" title="getIcms :: Retorna o percentual de ICMS."><span class="description">Retorna o percentual de ICMS.</span><pre>getIcms()</pre></a></li>
+<li class="method public "><a href="#getMensagemErro" title="getMensagemErro :: Retorna a mensagem de erro, caso tenha havido erro."><span class="description">Retorna a mensagem de erro, caso tenha havido erro.</span><pre>getMensagemErro()</pre></a></li>
+<li class="method public "><a href="#getPrazoEntrega" title="getPrazoEntrega :: Retorna o prazo de entrega do frete."><span class="description">Retorna o prazo de entrega do frete.</span><pre>getPrazoEntrega()</pre></a></li>
+<li class="method public "><a href="#getSubtotal" title="getSubtotal :: Retorna o valor do subtotal do frete."><span class="description">Retorna o valor do subtotal do frete.</span><pre>getSubtotal()</pre></a></li>
+<li class="method public "><a href="#getSucesso" title="getSucesso :: Indica se a consulta foi concluída com sucesso."><span class="description">Indica se a consulta foi concluída com sucesso.</span><pre>getSucesso()</pre></a></li>
+<li class="method public "><a href="#getTaxaAdeme" title="getTaxaAdeme :: Retorna o valor da taxa de ademe."><span class="description">Retorna o valor da taxa de ademe.</span><pre>getTaxaAdeme()</pre></a></li>
+<li class="method public "><a href="#getTaxaDespacho" title="getTaxaDespacho :: Retorna o valor da taxa de despacho."><span class="description">Retorna o valor da taxa de despacho.</span><pre>getTaxaDespacho()</pre></a></li>
+<li class="method public "><a href="#getTaxaITR" title="getTaxaITR :: Retorna o valor da taxa de ITR."><span class="description">Retorna o valor da taxa de ITR.</span><pre>getTaxaITR()</pre></a></li>
+<li class="method public "><a href="#getTaxaOutros" title="getTaxaOutros :: Retorna o valor das outras taxas."><span class="description">Retorna o valor das outras taxas.</span><pre>getTaxaOutros()</pre></a></li>
+<li class="method public "><a href="#getTaxaPedagio" title="getTaxaPedagio :: Retorna o valor da taxa de pedágio."><span class="description">Retorna o valor da taxa de pedágio.</span><pre>getTaxaPedagio()</pre></a></li>
+<li class="method public "><a href="#getTaxaSecaoCad" title="getTaxaSecaoCad :: Retorna o valor da taxa de seção cadastro."><span class="description">Retorna o valor da taxa de seção cadastro.</span><pre>getTaxaSecaoCad()</pre></a></li>
+<li class="method public "><a href="#getTotalFrete" title="getTotalFrete :: Retorna o valor total do frete."><span class="description">Retorna o valor total do frete.</span><pre>getTotalFrete()</pre></a></li>
+<li class="method public "><a href="#getValorIcms" title="getValorIcms :: Retorna o valor do ICMS."><span class="description">Retorna o valor do ICMS.</span><pre>getValorIcms()</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="method private "><a href="#setFretePeso" title="setFretePeso :: Informa o valor do frete por peso."><span class="description">Informa o valor do frete por peso.</span><pre>setFretePeso()</pre></a></li>
+<li class="method private "><a href="#setFreteValor" title="setFreteValor :: Informa o valor do frete por valor."><span class="description">Informa o valor do frete por valor.</span><pre>setFreteValor()</pre></a></li>
+<li class="method private "><a href="#setIcms" title="setIcms :: Informa o percentual de ICMS do frete."><span class="description">Informa o percentual de ICMS do frete.</span><pre>setIcms()</pre></a></li>
+<li class="method private "><a href="#setMensagemErro" title="setMensagemErro :: Informa a mensagem de erro, caso tenha havido erro."><span class="description">Informa a mensagem de erro, caso tenha havido erro.</span><pre>setMensagemErro()</pre></a></li>
+<li class="method private "><a href="#setPrazoEntrega" title="setPrazoEntrega :: Informa o prazo de entrega do frete."><span class="description">Informa o prazo de entrega do frete.</span><pre>setPrazoEntrega()</pre></a></li>
+<li class="method private "><a href="#setSubtotal" title="setSubtotal :: Informa o valor do subtotal do frete."><span class="description">Informa o valor do subtotal do frete.</span><pre>setSubtotal()</pre></a></li>
+<li class="method private "><a href="#setSucesso" title="setSucesso :: Indica se a consulta foi concluída com sucesso."><span class="description">Indica se a consulta foi concluída com sucesso.</span><pre>setSucesso()</pre></a></li>
+<li class="method private "><a href="#setTaxaAdeme" title="setTaxaAdeme :: Informa o valor da taxa de ademe."><span class="description">Informa o valor da taxa de ademe.</span><pre>setTaxaAdeme()</pre></a></li>
+<li class="method private "><a href="#setTaxaDespacho" title="setTaxaDespacho :: Informa o valor da taxa de despacho."><span class="description">Informa o valor da taxa de despacho.</span><pre>setTaxaDespacho()</pre></a></li>
+<li class="method private "><a href="#setTaxaITR" title="setTaxaITR :: Informa o valor da taxa de ITR."><span class="description">Informa o valor da taxa de ITR.</span><pre>setTaxaITR()</pre></a></li>
+<li class="method private "><a href="#setTaxaOutros" title="setTaxaOutros :: Informa o valor das outras taxas."><span class="description">Informa o valor das outras taxas.</span><pre>setTaxaOutros()</pre></a></li>
+<li class="method private "><a href="#setTaxaPedagio" title="setTaxaPedagio :: Informa o valor da taxa de pedágio."><span class="description">Informa o valor da taxa de pedágio.</span><pre>setTaxaPedagio()</pre></a></li>
+<li class="method private "><a href="#setTaxaSecaoCad" title="setTaxaSecaoCad :: Informa o valor da taxa da seção cadastro."><span class="description">Informa o valor da taxa da seção cadastro.</span><pre>setTaxaSecaoCad()</pre></a></li>
+<li class="method private "><a href="#setTotalFrete" title="setTotalFrete :: Informa o valor total do frete."><span class="description">Informa o valor total do frete.</span><pre>setTotalFrete()</pre></a></li>
+<li class="method private "><a href="#setValorIcms" title="setValorIcms :: Informa o valor do ICMS do frete."><span class="description">Informa o valor do ICMS do frete.</span><pre>setValorIcms()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header private">» Private</li>
+<li class="property private "><a href="#%24fretePeso" title="$fretePeso :: Contém o valor do frete por peso."><span class="description">Contém o valor do frete por peso.</span><pre>$fretePeso</pre></a></li>
+<li class="property private "><a href="#%24freteValor" title="$freteValor :: Contém o valor do frete por valor."><span class="description">Contém o valor do frete por valor.</span><pre>$freteValor</pre></a></li>
+<li class="property private "><a href="#%24icms" title="$icms :: Contém o percentual de ICMS do frete."><span class="description">Contém o percentual de ICMS do frete.</span><pre>$icms</pre></a></li>
+<li class="property private "><a href="#%24mensagemErro" title="$mensagemErro :: Contém a mensagem de erro, caso tenha havido"><span class="description">Contém a mensagem de erro, caso tenha havido</span><pre>$mensagemErro</pre></a></li>
+<li class="property private "><a href="#%24prazoEntrega" title="$prazoEntrega :: Contém o prazo de entrega do frete."><span class="description">Contém o prazo de entrega do frete.</span><pre>$prazoEntrega</pre></a></li>
+<li class="property private "><a href="#%24subtotal" title="$subtotal :: Contém o valor do subtotal do frete."><span class="description">Contém o valor do subtotal do frete.</span><pre>$subtotal</pre></a></li>
+<li class="property private "><a href="#%24sucesso" title="$sucesso :: Indica se a consulta foi realizada com sucesso."><span class="description">Indica se a consulta foi realizada com sucesso.</span><pre>$sucesso</pre></a></li>
+<li class="property private "><a href="#%24taxaAdeme" title="$taxaAdeme :: Contém a taxa de ademe."><span class="description">Contém a taxa de ademe.</span><pre>$taxaAdeme</pre></a></li>
+<li class="property private "><a href="#%24taxaDespacho" title="$taxaDespacho :: Contém a taxa de despacho."><span class="description">Contém a taxa de despacho.</span><pre>$taxaDespacho</pre></a></li>
+<li class="property private "><a href="#%24taxaITR" title="$taxaITR :: Contém a taxa de ITR."><span class="description">Contém a taxa de ITR.</span><pre>$taxaITR</pre></a></li>
+<li class="property private "><a href="#%24taxaOutros" title="$taxaOutros :: Contém outras taxas."><span class="description">Contém outras taxas.</span><pre>$taxaOutros</pre></a></li>
+<li class="property private "><a href="#%24taxaPedagio" title="$taxaPedagio :: Contém a taxa de pedágio."><span class="description">Contém a taxa de pedágio.</span><pre>$taxaPedagio</pre></a></li>
+<li class="property private "><a href="#%24taxaSecaoCad" title="$taxaSecaoCad :: Contém a taxa de cadastro da seção."><span class="description">Contém a taxa de cadastro da seção.</span><pre>$taxaSecaoCad</pre></a></li>
+<li class="property private "><a href="#%24totalFrete" title="$totalFrete :: Contém o valor total do frete."><span class="description">Contém o valor total do frete.</span><pre>$totalFrete</pre></a></li>
+<li class="property private "><a href="#%24valorIcms" title="$valorIcms :: Contém o valor do ICMS do frete."><span class="description">Contém o valor do ICMS do frete.</span><pre>$valorIcms</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CBraspressCalculaFreteResultado" id="\BraspressCalculaFreteResultado"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/BraspressCalculaFreteResultado.html">BraspressCalculaFreteResultado</a>
+</li>
+</ul>
+<div href="../classes/BraspressCalculaFreteResultado.html" class="element class">
+<p class="short_description">Classe que irá conter o resultado do cálculo de frete monstrando todos
+os detalhes do cálculo.</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="mailto:ivan.whm@me.com">Ivan Wilhelm</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/braspress.html">braspress</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0</td>
+</tr>
+<tr>
+<th>final</th>
+<td></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Cria um objeto de resultado.</h2>
+<pre>__construct(\stdClass $retorno) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$retorno</h4>
+<code><a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></code><p>Retorno da Braspress.</p></div>
+</div></div>
+</div>
+<a name="getFretePeso" id="getFretePeso"></a><div class="element clickable method public getFretePeso" data-toggle="collapse" data-target=".getFretePeso .collapse">
+<h2>Retorna o valor do frete por peso.</h2>
+<pre>getFretePeso() : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>double</code></div>
+</div></div>
+</div>
+<a name="getFreteValor" id="getFreteValor"></a><div class="element clickable method public getFreteValor" data-toggle="collapse" data-target=".getFreteValor .collapse">
+<h2>Retorna o valor do frete por valor.</h2>
+<pre>getFreteValor() : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>double</code></div>
+</div></div>
+</div>
+<a name="getIcms" id="getIcms"></a><div class="element clickable method public getIcms" data-toggle="collapse" data-target=".getIcms .collapse">
+<h2>Retorna o percentual de ICMS.</h2>
+<pre>getIcms() : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>double</code></div>
+</div></div>
+</div>
+<a name="getMensagemErro" id="getMensagemErro"></a><div class="element clickable method public getMensagemErro" data-toggle="collapse" data-target=".getMensagemErro .collapse">
+<h2>Retorna a mensagem de erro, caso tenha havido erro.</h2>
+<pre>getMensagemErro() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getPrazoEntrega" id="getPrazoEntrega"></a><div class="element clickable method public getPrazoEntrega" data-toggle="collapse" data-target=".getPrazoEntrega .collapse">
+<h2>Retorna o prazo de entrega do frete.</h2>
+<pre>getPrazoEntrega() : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>double</code></div>
+</div></div>
+</div>
+<a name="getSubtotal" id="getSubtotal"></a><div class="element clickable method public getSubtotal" data-toggle="collapse" data-target=".getSubtotal .collapse">
+<h2>Retorna o valor do subtotal do frete.</h2>
+<pre>getSubtotal() : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>double</code></div>
+</div></div>
+</div>
+<a name="getSucesso" id="getSucesso"></a><div class="element clickable method public getSucesso" data-toggle="collapse" data-target=".getSucesso .collapse">
+<h2>Indica se a consulta foi concluída com sucesso.</h2>
+<pre>getSucesso() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a name="getTaxaAdeme" id="getTaxaAdeme"></a><div class="element clickable method public getTaxaAdeme" data-toggle="collapse" data-target=".getTaxaAdeme .collapse">
+<h2>Retorna o valor da taxa de ademe.</h2>
+<pre>getTaxaAdeme() : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>double</code></div>
+</div></div>
+</div>
+<a name="getTaxaDespacho" id="getTaxaDespacho"></a><div class="element clickable method public getTaxaDespacho" data-toggle="collapse" data-target=".getTaxaDespacho .collapse">
+<h2>Retorna o valor da taxa de despacho.</h2>
+<pre>getTaxaDespacho() : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>double</code></div>
+</div></div>
+</div>
+<a name="getTaxaITR" id="getTaxaITR"></a><div class="element clickable method public getTaxaITR" data-toggle="collapse" data-target=".getTaxaITR .collapse">
+<h2>Retorna o valor da taxa de ITR.</h2>
+<pre>getTaxaITR() : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>double</code></div>
+</div></div>
+</div>
+<a name="getTaxaOutros" id="getTaxaOutros"></a><div class="element clickable method public getTaxaOutros" data-toggle="collapse" data-target=".getTaxaOutros .collapse">
+<h2>Retorna o valor das outras taxas.</h2>
+<pre>getTaxaOutros() : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>double</code></div>
+</div></div>
+</div>
+<a name="getTaxaPedagio" id="getTaxaPedagio"></a><div class="element clickable method public getTaxaPedagio" data-toggle="collapse" data-target=".getTaxaPedagio .collapse">
+<h2>Retorna o valor da taxa de pedágio.</h2>
+<pre>getTaxaPedagio() : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>double</code></div>
+</div></div>
+</div>
+<a name="getTaxaSecaoCad" id="getTaxaSecaoCad"></a><div class="element clickable method public getTaxaSecaoCad" data-toggle="collapse" data-target=".getTaxaSecaoCad .collapse">
+<h2>Retorna o valor da taxa de seção cadastro.</h2>
+<pre>getTaxaSecaoCad() : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>double</code></div>
+</div></div>
+</div>
+<a name="getTotalFrete" id="getTotalFrete"></a><div class="element clickable method public getTotalFrete" data-toggle="collapse" data-target=".getTotalFrete .collapse">
+<h2>Retorna o valor total do frete.</h2>
+<pre>getTotalFrete() : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>double</code></div>
+</div></div>
+</div>
+<a name="getValorIcms" id="getValorIcms"></a><div class="element clickable method public getValorIcms" data-toggle="collapse" data-target=".getValorIcms .collapse">
+<h2>Retorna o valor do ICMS.</h2>
+<pre>getValorIcms() : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>public</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>double</code></div>
+</div></div>
+</div>
+<a name="setFretePeso" id="setFretePeso"></a><div class="element clickable method private setFretePeso" data-toggle="collapse" data-target=".setFretePeso .collapse">
+<h2>Informa o valor do frete por peso.</h2>
+<pre>setFretePeso(double $fretePeso) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$fretePeso</h4>
+<code>double</code><p>Valor do frete por peso.</p></div>
+</div></div>
+</div>
+<a name="setFreteValor" id="setFreteValor"></a><div class="element clickable method private setFreteValor" data-toggle="collapse" data-target=".setFreteValor .collapse">
+<h2>Informa o valor do frete por valor.</h2>
+<pre>setFreteValor(double $freteValor) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$freteValor</h4>
+<code>double</code><p>Valor do frete por valor.</p></div>
+</div></div>
+</div>
+<a name="setIcms" id="setIcms"></a><div class="element clickable method private setIcms" data-toggle="collapse" data-target=".setIcms .collapse">
+<h2>Informa o percentual de ICMS do frete.</h2>
+<pre>setIcms(double $icms) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$icms</h4>
+<code>double</code><p>Percentual de ICMS</p></div>
+</div></div>
+</div>
+<a name="setMensagemErro" id="setMensagemErro"></a><div class="element clickable method private setMensagemErro" data-toggle="collapse" data-target=".setMensagemErro .collapse">
+<h2>Informa a mensagem de erro, caso tenha havido erro.</h2>
+<pre>setMensagemErro(string $mensagemErro) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$mensagemErro</h4>
+<code>string</code><p>Mensagem de erro, caso tenha havido erro.</p></div>
+</div></div>
+</div>
+<a name="setPrazoEntrega" id="setPrazoEntrega"></a><div class="element clickable method private setPrazoEntrega" data-toggle="collapse" data-target=".setPrazoEntrega .collapse">
+<h2>Informa o prazo de entrega do frete.</h2>
+<pre>setPrazoEntrega(double $prazoEntrega) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$prazoEntrega</h4>
+<code>double</code><p>Prazo de entrega do frete.</p></div>
+</div></div>
+</div>
+<a name="setSubtotal" id="setSubtotal"></a><div class="element clickable method private setSubtotal" data-toggle="collapse" data-target=".setSubtotal .collapse">
+<h2>Informa o valor do subtotal do frete.</h2>
+<pre>setSubtotal(double $subtotal) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$subtotal</h4>
+<code>double</code><p>Valor do subtotal do frete.</p></div>
+</div></div>
+</div>
+<a name="setSucesso" id="setSucesso"></a><div class="element clickable method private setSucesso" data-toggle="collapse" data-target=".setSucesso .collapse">
+<h2>Indica se a consulta foi concluída com sucesso.</h2>
+<pre>setSucesso(boolean $sucesso) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sucesso</h4>
+<code>boolean</code><p>Indica se a consulta foi concluída com sucesso.</p>
+</div>
+</div></div>
+</div>
+<a name="setTaxaAdeme" id="setTaxaAdeme"></a><div class="element clickable method private setTaxaAdeme" data-toggle="collapse" data-target=".setTaxaAdeme .collapse">
+<h2>Informa o valor da taxa de ademe.</h2>
+<pre>setTaxaAdeme(double $taxaAdeme) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$taxaAdeme</h4>
+<code>double</code><p>Taxa de ademe.</p></div>
+</div></div>
+</div>
+<a name="setTaxaDespacho" id="setTaxaDespacho"></a><div class="element clickable method private setTaxaDespacho" data-toggle="collapse" data-target=".setTaxaDespacho .collapse">
+<h2>Informa o valor da taxa de despacho.</h2>
+<pre>setTaxaDespacho(double $taxaDespacho) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$taxaDespacho</h4>
+<code>double</code><p>Taxa de despacho.</p></div>
+</div></div>
+</div>
+<a name="setTaxaITR" id="setTaxaITR"></a><div class="element clickable method private setTaxaITR" data-toggle="collapse" data-target=".setTaxaITR .collapse">
+<h2>Informa o valor da taxa de ITR.</h2>
+<pre>setTaxaITR(double $taxaITR) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$taxaITR</h4>
+<code>double</code><p>Taxa de ITR.</p></div>
+</div></div>
+</div>
+<a name="setTaxaOutros" id="setTaxaOutros"></a><div class="element clickable method private setTaxaOutros" data-toggle="collapse" data-target=".setTaxaOutros .collapse">
+<h2>Informa o valor das outras taxas.</h2>
+<pre>setTaxaOutros(double $taxaOutros) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$taxaOutros</h4>
+<code>double</code><p>Outras taxas.</p></div>
+</div></div>
+</div>
+<a name="setTaxaPedagio" id="setTaxaPedagio"></a><div class="element clickable method private setTaxaPedagio" data-toggle="collapse" data-target=".setTaxaPedagio .collapse">
+<h2>Informa o valor da taxa de pedágio.</h2>
+<pre>setTaxaPedagio(double $taxaPedagio) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$taxaPedagio</h4>
+<code>double</code><p>Taxa de pedágio.</p>
+</div>
+</div></div>
+</div>
+<a name="setTaxaSecaoCad" id="setTaxaSecaoCad"></a><div class="element clickable method private setTaxaSecaoCad" data-toggle="collapse" data-target=".setTaxaSecaoCad .collapse">
+<h2>Informa o valor da taxa da seção cadastro.</h2>
+<pre>setTaxaSecaoCad(double $taxaSecaoCad) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$taxaSecaoCad</h4>
+<code>double</code><p>Taxa da seção cadastro.</p>
+</div>
+</div></div>
+</div>
+<a name="setTotalFrete" id="setTotalFrete"></a><div class="element clickable method private setTotalFrete" data-toggle="collapse" data-target=".setTotalFrete .collapse">
+<h2>Informa o valor total do frete.</h2>
+<pre>setTotalFrete(double $totalFrete) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$totalFrete</h4>
+<code>double</code><p>Valor total do frete.</p></div>
+</div></div>
+</div>
+<a name="setValorIcms" id="setValorIcms"></a><div class="element clickable method private setValorIcms" data-toggle="collapse" data-target=".setValorIcms .collapse">
+<h2>Informa o valor do ICMS do frete.</h2>
+<pre>setValorIcms(double $valorIcms) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$valorIcms</h4>
+<code>double</code><p>Valor do ICMS do frete.</p></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24fretePeso" id="$fretePeso"> </a><div class="element clickable property private $fretePeso" data-toggle="collapse" data-target=".$fretePeso .collapse">
+<h2>Contém o valor do frete por peso.</h2>
+<pre>$fretePeso : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24freteValor" id="$freteValor"> </a><div class="element clickable property private $freteValor" data-toggle="collapse" data-target=".$freteValor .collapse">
+<h2>Contém o valor do frete por valor.</h2>
+<pre>$freteValor : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24icms" id="$icms"> </a><div class="element clickable property private $icms" data-toggle="collapse" data-target=".$icms .collapse">
+<h2>Contém o percentual de ICMS do frete.</h2>
+<pre>$icms : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24mensagemErro" id="$mensagemErro"> </a><div class="element clickable property private $mensagemErro" data-toggle="collapse" data-target=".$mensagemErro .collapse">
+<h2>Contém a mensagem de erro, caso tenha havido</h2>
+<pre>$mensagemErro : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24prazoEntrega" id="$prazoEntrega"> </a><div class="element clickable property private $prazoEntrega" data-toggle="collapse" data-target=".$prazoEntrega .collapse">
+<h2>Contém o prazo de entrega do frete.</h2>
+<pre>$prazoEntrega : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24subtotal" id="$subtotal"> </a><div class="element clickable property private $subtotal" data-toggle="collapse" data-target=".$subtotal .collapse">
+<h2>Contém o valor do subtotal do frete.</h2>
+<pre>$subtotal : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24sucesso" id="$sucesso"> </a><div class="element clickable property private $sucesso" data-toggle="collapse" data-target=".$sucesso .collapse">
+<h2>Indica se a consulta foi realizada com sucesso.</h2>
+<pre>$sucesso : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24taxaAdeme" id="$taxaAdeme"> </a><div class="element clickable property private $taxaAdeme" data-toggle="collapse" data-target=".$taxaAdeme .collapse">
+<h2>Contém a taxa de ademe.</h2>
+<pre>$taxaAdeme : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24taxaDespacho" id="$taxaDespacho"> </a><div class="element clickable property private $taxaDespacho" data-toggle="collapse" data-target=".$taxaDespacho .collapse">
+<h2>Contém a taxa de despacho.</h2>
+<pre>$taxaDespacho : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24taxaITR" id="$taxaITR"> </a><div class="element clickable property private $taxaITR" data-toggle="collapse" data-target=".$taxaITR .collapse">
+<h2>Contém a taxa de ITR.</h2>
+<pre>$taxaITR : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24taxaOutros" id="$taxaOutros"> </a><div class="element clickable property private $taxaOutros" data-toggle="collapse" data-target=".$taxaOutros .collapse">
+<h2>Contém outras taxas.</h2>
+<pre>$taxaOutros : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24taxaPedagio" id="$taxaPedagio"> </a><div class="element clickable property private $taxaPedagio" data-toggle="collapse" data-target=".$taxaPedagio .collapse">
+<h2>Contém a taxa de pedágio.</h2>
+<pre>$taxaPedagio : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24taxaSecaoCad" id="$taxaSecaoCad"> </a><div class="element clickable property private $taxaSecaoCad" data-toggle="collapse" data-target=".$taxaSecaoCad .collapse">
+<h2>Contém a taxa de cadastro da seção.</h2>
+<pre>$taxaSecaoCad : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24totalFrete" id="$totalFrete"> </a><div class="element clickable property private $totalFrete" data-toggle="collapse" data-target=".$totalFrete .collapse">
+<h2>Contém o valor total do frete.</h2>
+<pre>$totalFrete : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24valorIcms" id="$valorIcms"> </a><div class="element clickable property private $valorIcms" data-toggle="collapse" data-target=".$valorIcms .collapse">
+<h2>Contém o valor do ICMS do frete.</h2>
+<pre>$valorIcms : double</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>access</th>
+<td>private</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a9</a> and<br>
+            generated on 2012-08-30T15:50:27-03:00.<br></footer></div>
+</div>
+</body>
+</html>
