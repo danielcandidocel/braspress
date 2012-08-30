@@ -55,7 +55,7 @@
     }
 
     /**
-     * Processa a consulta e armazena o resultado.
+     * Processa a consulta e retorna VERDADEIRO se foi concluída com sucesso.
      * @return boolean
      */
     public function processaConsulta()

@@ -149,6 +149,11 @@
       $this->volume = $volume;
     }
 
+    /**
+     * Processa a consulta e retorna VERDADEIRO se foi concluída com sucesso.
+     * @return boolean
+     * @throws Exception 
+     */
     public function processaConsulta()
     {
       //Ativa o uso de URL FOpen
